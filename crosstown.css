@@ -46,15 +46,19 @@ header img{
 }
 
 .title{
+	margin-top: 5rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	border: var(--border-style);
+	border-radius: 50px;
 }
 
 h1{
 	font-family: var(--title-font);
 	font-size: 4rem;
+	padding-left: 2rem;
 }
 
 h4{
@@ -62,4 +66,37 @@ h4{
 	max-width: 60%;
 	margin-left: 2rem;
 	font-size: 1.2rem;
+	padding-right: 1rem;
+
 }
+
+.project-details{
+	margin-top: 5rem;
+	width: 100%;
+	/* border: var(--border-style);
+	border-radius: 50px; */
+}
+
+.project-info{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-bottom: 1rem;
+}
+
+h2 {
+	font-family: var(--title-font);
+	font-size: 2rem;
+
+}
+
+.project-info p{
+	line-height: 0.5;
+}
+
+.project-info li{
+	line-height: 0.8;
+}
+

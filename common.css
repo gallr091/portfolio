@@ -19,6 +19,8 @@
 	--title-font-style: normal;
 
   	/* Other */
+	 --border-style: 1.5px solid #000;
+
   /* --border-style: 2px dashed black;
   --transition: 0.3s ease-in-out;   */
 }
