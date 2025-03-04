@@ -1,4 +1,14 @@
 
+html{
+	scroll-behavior: smooth;
+	max-height: 100vh;
+}
+
+:target {
+	scroll-margin-top: 300px; 
+  }
+  
+
 #description {
 	font-size: 0.7rem;
 	display: flex;
@@ -20,12 +30,16 @@
 	height: 550px;
 	border-radius: 50px;
 	margin: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
 }	
 
 .gallery{
 	border: 1.5px solid black; 
 	height: 550px;
-	border-radius: 50px;
+	border-radius: 40px;
 	width: 450px;
 }
 
@@ -96,7 +110,7 @@ ul .link{
 
   .scroll-container {
 	width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 	white-space: nowrap;
 	scroll-behavior: smooth;
   }
@@ -126,3 +140,84 @@ ul .link{
 	margin-top: 1rem;
   }
 
+  .about-me-text{
+	margin-left: 2rem;
+	height: 550px;
+	overflow-y: scroll;
+  }
+
+  .about-me-text h1{
+	font-family: var(--title-font);
+	font-size: 3rem;
+	margin-top: -0.5rem;
+  }
+
+  .about-me-text p{
+	font-size: 0.9rem;
+  }
+
+  .bio {
+	margin-bottom: 2rem;
+	margin-top: -1rem;
+  }
+
+  .sparkle{
+	margin-bottom: 2rem;
+	text-align: center;
+  }
+
+  .list{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-top: -1rem;
+  }
+
+  .list p{
+	margin-top: -1rem;
+  }
+
+  .list li{
+	line-height: 1.5;
+	margin-top: -1rem;
+  }
+
+  .article-link{
+	margin-bottom: 1.2rem;
+  }
+
+  .article-link a:hover{
+	  font-style: italic;
+	  text-decoration: underline;
+	  color: black;
+  }
+/* 
+  .menu-item {
+		border: 1.5px solid black; 
+		border-radius: 50px;
+		height: auto;
+		text-align: center;
+		padding: 0.5rem;
+		font-size: 0.8rem;
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+  }
+
+  .menu-item:hover{
+	cursor: pointer;
+	color: var(--color-lightgreen);
+	background: black;
+  }
+
+  .menu-item a:hover{
+	color: var(--color-lightgreen);
+  }
+
+  :target {
+	scroll-margin-top: 100px; 
+  }
+   */
+
+.bio, .list{
+	margin-top: -2rem;
+   }

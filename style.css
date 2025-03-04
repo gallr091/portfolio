@@ -65,7 +65,7 @@ a {
 	/* color: black; */
 }
 
-li:first-of-type a{
+#website-links li:first-of-type a{
 		color: var(--color-lightgreen);
 }
 
