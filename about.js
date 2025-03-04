@@ -123,4 +123,28 @@ document.getElementById("reset").addEventListener("click", () => {
   generateImages(); 
 });
 
+// FUNCTION: PROJECT SCROLL
+const scrollContainer = document.querySelector(".scroll-container");
+const scrollGrid = document.querySelector(".scroll-grid-gallery");
+const scrollAmount = 300; 
+
+scrollGrid.innerHTML += scrollGrid.innerHTML;
+
+document.getElementById("arrow-right").addEventListener("click", () => {
+  scrollContainer.scrollLeft -= scrollAmount;
+
+  if (scrollContainer.scrollLeft <= 0) {
+    scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2; 
+  }
+});
+
+document.getElementById("arrow-left").addEventListener("click", () => {
+  scrollContainer.scrollLeft += scrollAmount;
+
+  const maxScroll = scrollGrid.scrollWidth / 2;
+  if (scrollContainer.scrollLeft >= maxScroll) {
+    scrollContainer.scrollLeft = 0; 
+  }
+});
+
 });

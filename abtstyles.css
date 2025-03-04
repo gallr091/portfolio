@@ -110,7 +110,7 @@ ul .link{
   }
 
   .scroll-grid-gallery img {
-	width: 100%; 
+	width: 300px; 
 	height: 400px; 
 	object-fit: cover; 
 	display: block;
@@ -121,8 +121,8 @@ ul .link{
   }
 
   picture{
-	margin-right: 1rem;
-	margin-left: 1rem;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
 	margin-top: 1rem;
   }
 
