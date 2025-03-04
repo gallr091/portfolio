@@ -1,20 +1,19 @@
 window.addEventListener("load", function() {
-
-  // FUNCTION: CHANGING TEXT EFFECT
-  const words = [
-	"a UX designer",
-	"a graphic designer",
-	"a creative coder",
-	"an illustrator",
-	"a motion designer", 
-	"a printmaker",
-	"a web designer",
+	const words = [
+	"I like boba",
+	"I have 2 cats (Polly + Sprig)",
+	"I'm from the Philippines",
+	"I love playing video games",
+	"I prefer my eggs runny :)", 
+	"I'm a D&D fan",
+	"My star sign is Pisces ♓︎",
+	"I'm obsessed with Cinnamoroll",
 ];
 
 const colors = ['#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#FA6385', '#e74c3c'];
 
 let index = 0;
-const changingWord = document.getElementById("changing-text");
+const changingWord = document.getElementById("changingphrase");
 
 function changeWord() {
     changingWord.classList.add("fade-out"); 
@@ -46,32 +45,8 @@ function changeWord() {
     }, 500); 
 }
 
-setInterval(changeWord, 1500); 
+setInterval(changeWord, 2000); 
 
-
-// FUNCTION: PROJECT SCROLL
-const scrollContainer = document.querySelector(".scroll-container");
-const scrollGrid = document.querySelector(".scroll-grid-ux");
-const scrollAmount = 300; 
-
-scrollGrid.innerHTML += scrollGrid.innerHTML;
-
-document.getElementById("arrow-right").addEventListener("click", () => {
-  scrollContainer.scrollLeft -= scrollAmount;
-
-  if (scrollContainer.scrollLeft <= 0) {
-    scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2; 
-  }
-});
-
-document.getElementById("arrow-left").addEventListener("click", () => {
-  scrollContainer.scrollLeft += scrollAmount;
-
-  const maxScroll = scrollGrid.scrollWidth / 2;
-  if (scrollContainer.scrollLeft >= maxScroll) {
-    scrollContainer.scrollLeft = 0; 
-  }
-});
 
 
 // FUNCTION: RANDOM DOODLES
@@ -148,38 +123,4 @@ document.getElementById("reset").addEventListener("click", () => {
   generateImages(); 
 });
 
-
 });
-
-
-// FUNCTION: SVG SHAKE
-const letters = document.querySelectorAll('.cls-1, .cls-2');
-
-letters.forEach(letter => {
-    letter.addEventListener('mouseenter', () => {
-        let interval;
-        
-        const startShaking = () => {
-            interval = setInterval(() => {
-                const randomRotation = (Math.random() - 0.5) * 10; 
-                
-                letters.forEach(l => {
-                    l.style.transition = 'transform 0.1s ease-in-out';
-                    l.style.transform = `rotate(${randomRotation}deg)`;
-                    l.style.transformOrigin = 'center';
-                });
-            }, 100);
-        };
-
-        startShaking();
-
-        setTimeout(() => {
-            clearInterval(interval); 
-            letters.forEach(l => {
-                l.style.transition = 'transform 0.5s ease-out';
-                l.style.transform = 'rotate(0deg)';
-            });
-        }, 3000); 
-    });
-});
-
