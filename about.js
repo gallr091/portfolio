@@ -1,8 +1,8 @@
 window.addEventListener("load", function() {
 	const words = [
-	"I like boba",
+	"My go-to boba order is brown sugar milk tea",
 	"I have 2 cats (Polly + Sprig)",
-	"I'm from the Philippines",
+	"I'm proudly Filipino",
 	"I love playing video games",
 	"I prefer my eggs runny :)", 
 	"I'm a D&D fan",
