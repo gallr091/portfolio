@@ -54,6 +54,13 @@ body {
 	color: var(--color-lightgreen);
   }
 
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
 a {
 	text-decoration: none;
 	color: black;
