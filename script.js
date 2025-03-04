@@ -11,7 +11,7 @@ window.addEventListener("load", function() {
 	"a web designer",
 ];
 
-const colors = ['#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#FA6385'];
+const colors = ['#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#FA6385', '#e74c3c'];
 
 let index = 0;
 const changingWord = document.getElementById("changing-text");

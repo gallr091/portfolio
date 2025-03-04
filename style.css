@@ -246,6 +246,7 @@ footer{
 	flex-direction: column;
 	/* -webkit-filter: drop-shadow(5px 5px 5px 	#3b3b3b);
 	box-shadow: drop-shadow(5px 5px 5px 	#3b3b3b); */
+	height: 560px;
 	
 }
 
