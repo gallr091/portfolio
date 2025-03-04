@@ -74,6 +74,8 @@ document.getElementById("arrow-left").addEventListener("click", () => {
 });
 
 
+
+
 // FUNCTION: RANDOM DOODLES
 const totalImages = 9;
 let imagesToLoad = Math.floor(Math.random() * 2) + 3; 

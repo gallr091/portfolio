@@ -374,13 +374,23 @@ h2{
 	overflow: hidden;
 	white-space: nowrap;
 	scroll-behavior: smooth;
-  }
+	overflow-x: auto;
+	scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; 
+}
+  
   
   .scroll-grid-ux {
 	display: flex;
 	animation: scroll 50s linear infinite;
 	width: max-content;
 	overflow: hidden; 
+	overflow-x: auto;
+
   }
 
   .scroll-grid-ux img {
