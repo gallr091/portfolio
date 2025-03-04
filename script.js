@@ -1,5 +1,7 @@
 window.addEventListener("load", function() {
-    const words = [
+
+  // FUNCTION: CHANGING TEXT EFFECT
+  const words = [
 	"a UX designer",
 	"a graphic designer",
 	"a creative coder",
@@ -9,7 +11,7 @@ window.addEventListener("load", function() {
 	"a web designer",
 ];
 
-const colors = ['#ffbc42', '#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#B56CFF'];
+const colors = ['#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#FA6385'];
 
 let index = 0;
 const changingWord = document.getElementById("changing-text");
@@ -47,47 +49,39 @@ function changeWord() {
 setInterval(changeWord, 1500); 
 
 
-//grid
+// FUNCTION: PROJECT SCROLL
 const scrollContainer = document.querySelector(".scroll-container");
 const scrollGrid = document.querySelector(".scroll-grid-ux");
-const scrollAmount = 300; // Adjust distance per click
+const scrollAmount = 300; 
 
-// Clone the content to create an infinite loop
 scrollGrid.innerHTML += scrollGrid.innerHTML;
 
-// Left arrow button functionality
 document.getElementById("arrow-right").addEventListener("click", () => {
   scrollContainer.scrollLeft -= scrollAmount;
 
-  // Infinite scroll logic: Reset scroll position to prevent jumping
   if (scrollContainer.scrollLeft <= 0) {
-    scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2; // Jump to the second batch
+    scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2; 
   }
 });
 
-// Right arrow button functionality
 document.getElementById("arrow-left").addEventListener("click", () => {
   scrollContainer.scrollLeft += scrollAmount;
 
-  // Infinite scroll logic: Reset scroll position to prevent jumping
   const maxScroll = scrollGrid.scrollWidth / 2;
   if (scrollContainer.scrollLeft >= maxScroll) {
-    scrollContainer.scrollLeft = 0; // Move back to the start
+    scrollContainer.scrollLeft = 0; 
   }
 });
 
 
-
-
-// random icons
+// FUNCTION: RANDOM DOODLES
 const totalImages = 8;
-let imagesToLoad = Math.floor(Math.random() * 2) + 3; // Randomly choose 3 or 4 images
+let imagesToLoad = Math.floor(Math.random() * 2) + 3; 
 let selectedImages = [];
 
-// Function to create and position the images
 function generateImages() {
-  selectedImages.length = 0; // Reset selected images array
-  // Select random images
+  selectedImages.length = 0; 
+
   while (selectedImages.length < imagesToLoad) {
     let randomIndex = Math.floor(Math.random() * totalImages) + 1;
     let imgSrc = `icons/img-${randomIndex}.png`;
@@ -97,19 +91,17 @@ function generateImages() {
   }
 
   const container = document.getElementById("icon-container");
-  container.innerHTML = ""; // Clear any existing images
+  container.innerHTML = ""; 
 
   selectedImages.forEach((src) => {
     let img = document.createElement("img");
     img.src = src;
     img.classList.add("draggable");
 
-    // Set random position
     img.style.position = "absolute";
     img.style.left = Math.random() * (window.innerWidth - 100) + "px";
     img.style.top = Math.random() * (window.innerHeight - 100) + "px";
 
-    // Make draggable
     img.addEventListener("mousedown", (e) => {
       e.preventDefault();
       let shiftX = e.clientX - img.getBoundingClientRect().left;
@@ -135,35 +127,32 @@ function generateImages() {
   });
 }
 
-// Initial image generation
 generateImages();
 
-// Toggle button functionality (Hide/Show Doodles)
+// toggle 
 document.getElementById("toggleDoodles").addEventListener("click", () => {
   const container = document.getElementById("icon-container");
   const button = document.getElementById("toggleDoodles");
 
   if (container.style.display === "none") {
-    // Show the images
     container.style.display = "block";
-    button.textContent = "(hide doodles)"; // Change button text to "Hide Doodles"
+    button.textContent = "(hide doodles)";
   } else {
-    // Hide the images
     container.style.display = "none";
-    button.textContent = "(show doodles)"; // Change button text to "Show Doodles"
+    button.textContent = "(show doodles)"; 
   }
 });
 
-// Reset button functionality
+// reset
 document.getElementById("reset").addEventListener("click", () => {
-  generateImages(); // Reset images by re-generating them
+  generateImages(); 
 });
 
 
 });
 
 
-// svg
+// FUNCTION: SVG SHAKE
 const letters = document.querySelectorAll('.cls-1, .cls-2');
 
 letters.forEach(letter => {
@@ -172,25 +161,25 @@ letters.forEach(letter => {
         
         const startShaking = () => {
             interval = setInterval(() => {
-                const randomRotation = (Math.random() - 0.5) * 10; // Random -5 to 5 degrees
+                const randomRotation = (Math.random() - 0.5) * 10; 
                 
                 letters.forEach(l => {
                     l.style.transition = 'transform 0.1s ease-in-out';
                     l.style.transform = `rotate(${randomRotation}deg)`;
                     l.style.transformOrigin = 'center';
                 });
-            }, 100); // Update every 100ms for a smooth shake
+            }, 100);
         };
 
         startShaking();
 
         setTimeout(() => {
-            clearInterval(interval); // Stop shaking
+            clearInterval(interval); 
             letters.forEach(l => {
                 l.style.transition = 'transform 0.5s ease-out';
-                l.style.transform = 'rotate(0deg)'; // Reset all letters
+                l.style.transform = 'rotate(0deg)';
             });
-        }, 3000); // Shake for 2 seconds
+        }, 3000); 
     });
 });
 
