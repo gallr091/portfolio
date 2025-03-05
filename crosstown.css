@@ -236,4 +236,18 @@ h2 {
 	margin-bottom: 5rem;
 }
 
+#venn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	height: 80%;
+
+}
+
+#venn img{
+	height: 90%;
+	align-items: center;
+}
+
 
