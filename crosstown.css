@@ -329,13 +329,22 @@ h2 {
 
 	.lofi-gif img{
 		border-radius: 50px;
+		width: 69vw;
 	}
 
 .features{
 	margin-top: -3rem;
+	margin-bottom: 5rem;
 }
 
 .lofi-caption{
 	margin-top: -3rem;
 	font-size: 1.2rem;
 }
+
+.branding-pic img{
+	border-radius: 50px;
+	width: 70vw;
+	border: var(--border-style);
+}
+
