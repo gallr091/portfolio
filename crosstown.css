@@ -162,3 +162,57 @@ h2 {
 .app-gif picture{
 	width: 90%;
 }
+
+.pic-with-caption{
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+}
+
+.pic-with-caption img{
+	max-width: 100%;
+	margin-top: 3rem;
+}
+
+.pic-with-caption p{
+	font-size: 1.2rem;
+}
+
+.insights {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center; 
+	gap: 20px; 
+	width: 100%; 
+	margin-top: 3rem;
+}
+
+.text-block{
+	border: var(--border-style);
+	border-radius: 40px;
+}
+
+.text-block h2{
+	text-align: center;
+	border-bottom: var(--border-style);
+	margin-top: -0.05rem;
+	padding: 0.5rem;
+}
+
+.insights h3{
+	display: flex;
+	width: 200px;
+	font-family: var(--title-font);
+	height: 150px;
+	padding: 1rem;
+	font-size: 1.5rem;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+}
+
+
+
