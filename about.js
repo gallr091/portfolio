@@ -111,10 +111,10 @@ document.getElementById("toggleDoodles").addEventListener("click", () => {
 
   if (container.style.display === "none") {
     container.style.display = "block";
-    button.textContent = "(hide doodles)";
+    button.textContent = "(hide stickers)";
   } else {
     container.style.display = "none";
-    button.textContent = "(show doodles)"; 
+    button.textContent = "(show stickers)"; 
   }
 });
 
