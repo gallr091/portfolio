@@ -380,7 +380,7 @@ h2{
 	white-space: nowrap;
 	scroll-behavior: smooth;
 	overflow-x: auto;
-	overflow-y: auto;
+	overflow-y: hidden;
 	scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
