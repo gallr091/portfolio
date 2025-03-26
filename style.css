@@ -305,6 +305,9 @@ h2{
 	/* overflow: hidden; */
 }
 
+#arrow-up, #arrow-down {
+	display: none;
+}
 
 
 /* scroll */
@@ -337,6 +340,7 @@ h2{
 	line-height: 0.5;
 	vertical-align: middle;
 	margin-top: -0.5rem;
+	align-items: center;
   }
 
   .project-title{
@@ -376,6 +380,7 @@ h2{
 	white-space: nowrap;
 	scroll-behavior: smooth;
 	overflow-x: auto;
+	overflow-y: auto;
 	scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
@@ -417,6 +422,12 @@ h2{
 	width: 95%;
 	/* margin: 0.5rem; */
 	height: auto;
+}
+
+.project-desc{
+	/* margin-top: 0.5rem; */
+	display: flex;
+	align-items: center;
 }
 
 

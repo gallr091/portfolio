@@ -13,7 +13,6 @@ window.addEventListener("load", function() {
 
 const colors = ['#d81159', '#8f2d56', '#2274a5', '#7209b7', '#FA6385', '#e74c3c'];
 // '#218380',
-
 let index = 0;
 const changingWord = document.getElementById("changing-text");
 
@@ -53,43 +52,98 @@ setInterval(changeWord, 1500);
 // FUNCTION: PROJECT SCROLL
 const scrollContainer = document.querySelector(".scroll-container");
 const scrollGrid = document.querySelector(".scroll-grid-ux");
-const scrollAmount = 300; 
+const toggleButton = document.querySelector(".toggle-view-button");
+const arrowRight = document.getElementById("arrow-right");
+const arrowLeft = document.getElementById("arrow-left");
+const arrowUp = document.getElementById("arrow-up");
+const arrowDown = document.getElementById("arrow-down");
 
-scrollGrid.innerHTML += scrollGrid.innerHTML;
+const scrollAmount = 300;
+let isGridView = false;
 
-document.getElementById("arrow-right").addEventListener("click", () => {
-  scrollContainer.scrollLeft -= scrollAmount;
+// duplicate for infinite scroll
+// scrollGrid.innerHTML += scrollGrid.innerHTML;
 
-  if (scrollContainer.scrollLeft <= 0) {
-    scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2; 
+toggleButton.addEventListener("click", () => {
+  isGridView = !isGridView;
+
+  if (isGridView) {
+      toggleButton.textContent = "SIDE SCROLL VIEW";
+      
+      
+     //vertical
+      arrowRight.style.display = "none";
+      arrowLeft.style.display = "none";
+      arrowUp.style.display = "flex";
+      arrowDown.style.display = "flex";
+
+      scrollContainer.style.overflowX = "hidden"; 
+      scrollContainer.style.overflowY = "auto";   
+      scrollContainer.scrollTop = 0; 
+  } else {
+      toggleButton.textContent = "GRID VIEW";
+      
+      //horizontal
+      arrowRight.style.display = "flex";
+      arrowLeft.style.display = "flex";
+      arrowUp.style.display = "none";
+      arrowDown.style.display = "none";
+
+      scrollContainer.style.overflowX = "auto"; 
+      scrollContainer.style.overflowY = "hidden"; 
+      scrollContainer.scrollLeft = 0; 
   }
 });
 
-document.getElementById("arrow-left").addEventListener("click", () => {
-  scrollContainer.scrollLeft += scrollAmount;
+// scrolling
+document.addEventListener("click", (event) => {
+  if (!scrollContainer) return;
 
-  const maxScroll = scrollGrid.scrollWidth / 2;
-  if (scrollContainer.scrollLeft >= maxScroll) {
-    scrollContainer.scrollLeft = 0; 
+  console.log("Clicked:", event.target.id);
+
+  if (event.target.id === "arrow-right") {
+      scrollContainer.scrollLeft += scrollAmount;
+      if (scrollContainer.scrollLeft >= scrollGrid.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
+      }
+  }
+
+  if (event.target.id === "arrow-left") {
+      scrollContainer.scrollLeft -= scrollAmount;
+      if (scrollContainer.scrollLeft <= 0) {
+          scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2;
+      }
+  }
+
+  if (event.target.id === "arrow-up") {
+      scrollContainer.scrollTop -= scrollAmount;
+      if (scrollContainer.scrollTop <= 0) {
+          scrollContainer.scrollTop = scrollGrid.scrollHeight / 2;
+      }
+  }
+
+  if (event.target.id === "arrow-down") {
+      scrollContainer.scrollTop += scrollAmount;
+      if (scrollContainer.scrollTop >= scrollGrid.scrollHeight / 2) {
+          scrollContainer.scrollTop = 0;
+      }
   }
 });
+
 
 
 //FUNCTION: GRID VIEW
 document.querySelector('.toggle-view-button').addEventListener('click', function() {
-  // Get the elements
   const scrollContainer = document.querySelector('.scroll-container');
   const button = document.querySelector('.toggle-view-button');
   
-  // Toggle the class for grid view
   scrollContainer.classList.toggle('grid-view');
   scrollContainer.classList.toggle('side-scroll-view');
   
-  // Update the button text based on the current view
   if (scrollContainer.classList.contains('grid-view')) {
-      button.textContent = 'SIDE SCROLL VIEW';  // When in grid view, change to side scroll view
+      button.textContent = 'SIDE SCROLL VIEW';  
   } else {
-      button.textContent = 'GRID VIEW';  // When in side scroll view, change to grid view
+      button.textContent = 'GRID VIEW'; 
   }
 });
 
