@@ -102,31 +102,31 @@ document.addEventListener("click", (event) => {
   console.log("Clicked:", event.target.id);
 
   if (event.target.id === "arrow-right") {
-      scrollContainer.scrollLeft += scrollAmount;
-      if (scrollContainer.scrollLeft >= scrollGrid.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0;
-      }
-  }
-
-  if (event.target.id === "arrow-left") {
       scrollContainer.scrollLeft -= scrollAmount;
-      if (scrollContainer.scrollLeft <= 0) {
-          scrollContainer.scrollLeft = scrollGrid.scrollWidth / 2;
-      }
-  }
+    //   if (scrollContainer.scrollLeft >= scrollGrid.scrollWidth - scrollContainer.clientWidth) {
+    //     scrollContainer.scrollLeft = 0; 
+    // }
+}
+
+if (event.target.id === "arrow-left") {
+  scrollContainer.scrollLeft += scrollAmount;
+  // if (scrollContainer.scrollLeft <= 0) {
+  //     scrollContainer.scrollLeft = scrollGrid.scrollWidth - scrollContainer.clientWidth; 
+  // }
+}
 
   if (event.target.id === "arrow-up") {
       scrollContainer.scrollTop -= scrollAmount;
-      if (scrollContainer.scrollTop <= 0) {
-          scrollContainer.scrollTop = scrollGrid.scrollHeight / 2;
-      }
+      // if (scrollContainer.scrollTop <= 0) {
+      //     scrollContainer.scrollTop = scrollGrid.scrollHeight / 2;
+      // }
   }
 
   if (event.target.id === "arrow-down") {
       scrollContainer.scrollTop += scrollAmount;
-      if (scrollContainer.scrollTop >= scrollGrid.scrollHeight / 2) {
-          scrollContainer.scrollTop = 0;
-      }
+      // if (scrollContainer.scrollTop >= scrollGrid.scrollHeight / 2) {
+      //     scrollContainer.scrollTop = 0;
+      // }
   }
 });
 
