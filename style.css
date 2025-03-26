@@ -269,7 +269,7 @@ footer{
 	padding-right: 1rem;
 	padding-top: 0.5rem;
 	border-bottom: 1.5px solid #000; 
-	margin-bottom: 1.5rem;
+	/* margin-bottom: 1.5rem; */
 }
 
 .arrows {
@@ -292,6 +292,7 @@ h2{
     justify-content: center; 
 	margin-left: 1rem;
 	cursor: pointer;
+	margin-bottom: 1rem;
 }
 
 .arrows h2:hover{
@@ -300,7 +301,8 @@ h2{
 }
 
 .thumbnails{
-	height: 85%;
+	height: 83%;
+	/* overflow: hidden; */
 }
 
 
@@ -366,7 +368,6 @@ h2{
 	align-items: center;
 	margin-top: 1rem;
 	padding-right: 1rem;
-
   }
 
 .scroll-container {
@@ -384,14 +385,87 @@ h2{
 }
   
   
-  .scroll-grid-ux {
+  /* .scroll-grid-ux {
 	display: flex;
 	animation: scroll 50s linear infinite;
 	width: max-content;
 	overflow: hidden; 
 	overflow-x: auto;
 
+  } */
+
+  .scroll-grid-ux {
+	display: flex;
+	overflow-x: auto;
+	width: max-content;
+	transition: all 0.3s ease-in-out;
+	margin-top: 1.5rem;
+}
+
+/* Grid Layout */
+.grid-view .scroll-grid-ux {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 0.5rem;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 0rem;
+	height: 80%;
+}
+
+.grid-view .project {
+	width: 95%;
+	/* margin: 0.5rem; */
+	height: auto;
+}
+
+
+.grid-view  .project-details{
+	display: none;
   }
+
+.grid-view  .scroll-grid-ux img{
+	height: 200px;
+}
+
+/* Make the scroll container vertically scrollable */
+.grid-view .scroll-grid-ux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width as needed */
+    gap: 1rem;
+    width: 100%;
+    height: 100%; /* Fill the parent container */
+    overflow-y: auto; /* Enable vertical scroll */
+    max-height: 500px; 
+	border-radius: 0 0 40px 40px;
+}
+
+/* Ensure the projects fit inside the grid */
+.grid-view .project {
+    width: 90%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Thumbnail styling inside each project */
+.scroll-grid-ux img {
+    width: 100%;
+    height: 100%; /* Ensure the image covers the entire area */
+    object-fit: cover;
+    display: block;
+    border-radius: 48px 48px 0 0; /* Adjust the border radius for images */
+    filter: grayscale(100%) contrast(100%);
+    border-bottom: 1.5px solid #000;
+    cursor: alias;
+}
+
+.scroll-grid-ux img:hover {
+    filter: none;
+    transition: 0.3s ease-in-out;
+    cursor: alias;
+}
+
 
   .scroll-grid-ux img {
 	width: 100%; 
@@ -424,18 +498,26 @@ h2{
 	pointer-events: none;
   }
   
-  /* Scroll animation */
-  /* @keyframes scroll {
-	from {
-	  transform: translateX(0);
-	}
-	to {
-	  transform: translateX(-50%);
-	}
-  } */
-  
-  /* Pause animation on hover */
-  .scroll-container:hover .scroll-grid {
-	animation-play-state: paused;
-  }
+ .toggle-view-button {
+	display: flex;
+	/* margin-right: 1rem; */
+	border:	1.5px solid #000;
+	text-align: center;
+	align-items: center;
+	line-height: 5vh;
+	border-radius: 50px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	height: 50px;
+	font-family: var(--body-font);
+	margin-top: 1rem;
+	cursor: pointer;
+	background: none;
+	height: 40px;
+}
+
+.toggle-view-button:hover{
+	background: black;
+	color: var(--color-background);
+}
   

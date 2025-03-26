@@ -2,16 +2,17 @@ window.addEventListener("load", function() {
 
   // FUNCTION: CHANGING TEXT EFFECT
   const words = [
-	"a UX designer",
-	"a graphic designer",
-	"a creative coder",
-	"an illustrator",
-	"a motion designer", 
-	"a printmaker",
-	"a web designer",
+	"UI/UX",
+	"graphic",
+	// "a creative coder",
+	// "an illustrator",
+	"motion", 
+	// "a printmaker",
+	"web",
 ];
 
-const colors = ['#d81159', '#8f2d56', '#218380', '#2274a5', '#7209b7', '#FA6385', '#e74c3c'];
+const colors = ['#d81159', '#8f2d56', '#2274a5', '#7209b7', '#FA6385', '#e74c3c'];
+// '#218380',
 
 let index = 0;
 const changingWord = document.getElementById("changing-text");
@@ -70,6 +71,25 @@ document.getElementById("arrow-left").addEventListener("click", () => {
   const maxScroll = scrollGrid.scrollWidth / 2;
   if (scrollContainer.scrollLeft >= maxScroll) {
     scrollContainer.scrollLeft = 0; 
+  }
+});
+
+
+//FUNCTION: GRID VIEW
+document.querySelector('.toggle-view-button').addEventListener('click', function() {
+  // Get the elements
+  const scrollContainer = document.querySelector('.scroll-container');
+  const button = document.querySelector('.toggle-view-button');
+  
+  // Toggle the class for grid view
+  scrollContainer.classList.toggle('grid-view');
+  scrollContainer.classList.toggle('side-scroll-view');
+  
+  // Update the button text based on the current view
+  if (scrollContainer.classList.contains('grid-view')) {
+      button.textContent = 'SIDE SCROLL VIEW';  // When in grid view, change to side scroll view
+  } else {
+      button.textContent = 'GRID VIEW';  // When in side scroll view, change to grid view
   }
 });
 
