@@ -440,19 +440,17 @@ h2{
 	height: 200px;
 }
 
-/* Make the scroll container vertically scrollable */
 .grid-view .scroll-grid-ux {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column width as needed */
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0.5rem;
     width: 100%;
-    height: 100%; /* Fill the parent container */
-    overflow-y: auto; /* Enable vertical scroll */
+    height: 100%; 
+    overflow-y: auto; 
     max-height: 500px; 
 	border-radius: 0 0 40px 40px;
 }
 
-/* Ensure the projects fit inside the grid */
 .grid-view .project {
     width: 90%;
     margin: 1rem;
@@ -460,13 +458,12 @@ h2{
     flex-direction: column;
 }
 
-/* Thumbnail styling inside each project */
 .scroll-grid-ux img {
     width: 100%;
-    height: 100%; /* Ensure the image covers the entire area */
+    height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 48px 48px 0 0; /* Adjust the border radius for images */
+    border-radius: 48px 48px 0 0;
     filter: grayscale(100%) contrast(100%);
     border-bottom: 1.5px solid #000;
     cursor: alias;
