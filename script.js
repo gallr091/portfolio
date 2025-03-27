@@ -227,6 +227,18 @@ document.getElementById("reset").addEventListener("click", () => {
 
 });
 
+//FUNCTION: BACK TO TOP
+// window.addEventListener("scroll", function () {
+//   const topButton = document.querySelector(".top");
+  
+//   if (window.scrollY > window.innerHeight) { // After 100vh
+//       topButton.style.bottom = "1rem"; // Show button
+//   } else {
+//       topButton.style.bottom = "-50px"; // Hide button
+//   }
+// });
+
+
 
 // FUNCTION: SVG SHAKE
 const letters = document.querySelectorAll('.cls-1, .cls-2');

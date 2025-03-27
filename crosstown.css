@@ -13,6 +13,24 @@ nav {
 	padding-right: 6rem;
 }
 
+/* .top {
+    display: flex;
+    position: sticky;
+    border: 1.5px solid #000;
+    text-align: center;
+    line-height: 2vh;
+    border-radius: 50px;
+    padding: 0.5rem;
+    background-color: var(--color-lightgreen);
+    font-size: 0.7rem;
+    transition: bottom 0.3s ease-in-out; 
+	top: 100vh;
+} */
+
+#top{
+	scroll-behavior: smooth;
+}
+
 main{
 	margin: 0.5rem;
 	display: flex;
