@@ -161,6 +161,11 @@ a {
 	.dropdown-menu li:hover {
 		background: black;
 		color: var(--color-lightgreen);
+		cursor: pointer;
+	}
+
+	.dropdown-menu li a:hover {
+		color: var(--color-lightgreen);
 	}
 
 	.dropdown-menu li:first-child:hover {

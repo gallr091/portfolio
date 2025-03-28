@@ -227,14 +227,39 @@ document.getElementById("reset").addEventListener("click", () => {
 
 });
 
-//FUNCTION: BACK TO TOP
+//FUNCTION: BACK TO TOP, CASE STUDY MENU
+//FUNCTION: BACK TO TOP, CASE STUDY MENU
 window.addEventListener("scroll", function () {
   const topButton = document.getElementById("top");
-  if (window.scrollY > window.innerHeight) {
+  const casestudyMenu = document.getElementById('casestudy-menu');
+  const contactLinks = document.querySelectorAll('.contact a');  // Targeting <a> inside .contact
+  
+  // Set the scroll position to trigger both elements at the same time
+  const triggerScroll = 500;  // Change this value to control when both items appear
+
+  // Back to Top button
+  if (window.scrollY > triggerScroll) {
       document.body.classList.add("scrolled");
   } else {
       document.body.classList.remove("scrolled");
   }
+
+  // Case Study Menu
+  if (window.scrollY > triggerScroll) {
+    casestudyMenu.style.opacity = 1;
+  } else {
+    casestudyMenu.style.opacity = 0; 
+  }
+
+  // Contact Links (targeting <a> inside .contact)
+  contactLinks.forEach(function(item) {  // Loop through each <a> element inside .contact
+    if (window.scrollY > triggerScroll) {
+      item.style.color = 'black';  // Change the text color to black when scrolled
+    } else {
+      item.style.color = '#F0FFF0';  // Default color before scroll
+    }
+  });
+
 });
 
 

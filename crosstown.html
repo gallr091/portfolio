@@ -39,9 +39,28 @@
 
 		<p class="link" id="top"><a href="#crosstown-header">BACK TO TOP ↑</a></li>
 
-		<main>
+		<ul id="casestudy-menu">
+				<li><a href="#crosstown-header">Introduction</a></li>
+				<li><a href="#problem">Problem & Research</a></li>
+				<li><a href="#design-iteration">Design & Iteration</a></li>
+				<li><a href="#final">Final Product</a></li>
+				<li><a href="#next-steps" target="_blank">Next Steps</a></li>
+			</ul>
 
 			<header>
+				<picture id="crosstown-header">
+					<img src="assets/header-crosstown.gif">
+				</picture>
+				<!-- <section class="title">
+					<h1>Crosstown</h1>
+					<h4>Simply put, <i>Crosstown</i> is a social and event-finding app aimed at helping NYC residents, especially newcomers, make friends while exploring the city.</h4>
+				</section> -->
+			</header>
+
+		<main>
+
+		<div class="casestudy-part" id="introduction">
+			<!-- <header>
 				<picture id="crosstown-header">
 					<img src="assets/project-crosstown.gif">
 				</picture>
@@ -49,7 +68,7 @@
 					<h1>Crosstown</h1>
 					<h4>Simply put, <i>Crosstown</i> is a social and event-finding app aimed at helping NYC residents, especially newcomers, make friends while exploring the city.</h4>
 				</section>
-			</header>
+			</header> -->
 
 			<section class="project-details">
 				<ul class="project-info">
@@ -106,9 +125,13 @@
 					</div>
 				</div>
 			</section>
+		</div>
 
+		<section class="divider">. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</section>
+
+		<div class="casestudy-part" id="problem-and-research">
 			<section class="agenda">
-				<h1>❶ Problem & Research</h1>
+				<h1 id="problem">❶ Problem & Research</h1>
 			</section>
 
 			<section class="title">
@@ -130,10 +153,11 @@
 				<picture>
 					<img src="assets/crosstown-research.png">
 				</picture>
-				<p>... and so I gathered my findings and came up with 4 main insights:</p>
+				<!-- <p>... and so I gathered my findings and came up with 4 main insights:</p> -->
+				<p>... and so I gathered my findings and came up with  2 main <b>insights</b> on how people approach social connection:</p>
 			</section>
 
-			<section class="insights">
+			<!-- <section class="insights">
 				<section class="text-block">
 					<h2>①</h2>
 					<h3>NYC residents put the most stock in the opinions of their friends and peers.</h3>
@@ -157,7 +181,7 @@
 
 			<section class="caption">
 				<p>I further condensed these insights into two main ideas on how people approach social connection:</p>
-			</section>
+			</section> -->
 
 			<section class="insights condensed">
 				<section class="text-block">
@@ -190,157 +214,171 @@
 				<p>... with that, I had enough research to move onto the next phase of my design process!</p>
 			</section>
 
-			<section class="agenda">
-				<h1>❷ Design & Iteration</h1>
-			</section>
+			</div>
+
+			<section class="divider">. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</section>
+
+			<div class="casestudy-part" id="design-and-iteration">
+	
+				<section class="agenda">
+					<h1 id="design-iteration">❷ Design & Iteration</h1>
+				</section>
+
+				<section class="title">
+					<h2>Sketching</h2>
+					<h4>I used my "How Might We" statements as a jumping off point to create quick sketches (with the help of my classmates) for idea generation.</h4>
+				</section>
+
+				<section class="caption">
+					<picture class="smaller">
+						<img src="assets/crosstown-sketches.png">
+					</picture>
+					<p>The sketching yielded several feature ideas:</p>
+				</section>
+
+				<section class="grid-insights">
+					<div class="block block1"> 
+						<h3>Group chats</h3>
+					</div>
+					<div class="block block2"> 
+						<h3>Features to showcase personality</h3>
+					</div>
+					<div class="block block3"> 
+						<h3>Easy access to information before meet-ups</h3>
+					</div>
+					<div class="block block4"> 
+						<h3>Activity or event-based meet-up options</h3>
+					</div>
+					<div class="block block5"> 
+						<h3>Proximity-based social features</h3>
+					</div>
+					<div class="block block6"> 
+						<h3>Flexible scheduling</h3>
+					</div>
+				</section>
+
+				<section class="title">
+					<h2>Lo-fi Prototypes & Usability Tests</h2>
+					<h4>With these ideas in mind, I created lo-fi prototypes for some aspects of the app I wanted to focus on, going through multiple rounds of testing, feedback, and iteration with potential users.</h4>
+				</section>
+
+				<div class="features">
+				<section class="app-preview">
+					<div class="section-title"><h3>① ACCOUNT CREATION (ONBOARDING)</h3></div>
+					<div class="table">
+						<div class="lofi-gif">
+							<picture>
+								<img src="assets/crosstown-lofi1.gif">
+							</picture>
+						</div>
+					</div>
+				</section>
+				<section class="lofi-caption">
+					<p>I knew that the onboarding process had to be robust in some capacity because I'd need to implement <b>security and verification features.</b> Safety is paramount, given that this app allows users to meet and interact with strangers.</p>
+					<p>With the feedback I got from user testing, I learned that I'd have to <b>streamline the process</b> a little bit better (along with more technical UI fixes).</p>
+				</section>
+
+				<section class="app-preview">
+					<div class="section-title"><h3>② PERSONALITY QUIZ</h3></div>
+					<div class="table">
+						<div class="lofi-gif">
+							<picture>
+								<img src="assets/crosstown-lofi2.gif">
+							</picture>
+						</div>
+					</div>
+				</section>
+				<section class="lofi-caption">
+					<p>Implementing a personality quiz was a great way to <b>put user preferences at the forefront</b>, but I needed to find a more effective way to introduce it and encourage users to complete it.</p>
+				</section>
+
+				<section class="app-preview">
+					<div class="section-title"><h3>③ EVENT SELECTION</h3></div>
+					<div class="table">
+						<div class="lofi-gif">
+							<picture>
+								<img src="assets/crosstown-lofi3.gif">
+							</picture>
+						</div>
+					</div>
+				</section>
+				<section class="lofi-caption">
+					<p>Easily being able to find events that best align with users' interests is one of the main hooks of the app. Confirming participation directly (like via <b>purchasing tickets</b>) enhances this aspect. I still needed to figure out how to better encourage participation, along with refining UI elements.</p>
+				</section>
+			</div>
 
 			<section class="title">
-				<h2>Sketching</h2>
-				<h4>I used my "How Might We" statements as a jumping off point to create quick sketches (with the help of my classmates) for idea generation.</h4>
+				<h2>Visual Design & Brand Identity</h2>
+				<h4>I took inspiration from the aesthetics of the New York City subway in creating my visual design system—distinctly NYC, with colors that recall its iconic train lines. I wanted to create a welcoming and inviting environment for users.</h4>
 			</section>
 
 			<section class="caption">
-				<picture class="smaller">
-					<img src="assets/crosstown-sketches.png">
+				<picture class="branding-pic">
+					<img src="assets/crosstown-branding1.png">
 				</picture>
-				<p>The sketching yielded several feature ideas:</p>
 			</section>
 
-			<section class="grid-insights">
-				<div class="block block1"> 
-					<h3>Group chats</h3>
-				</div>
-				<div class="block block2"> 
-					<h3>Features to showcase personality</h3>
-				</div>
-				<div class="block block3"> 
-					<h3>Easy access to information before meet-ups</h3>
-				</div>
-				<div class="block block4"> 
-					<h3>Activity or event-based meet-up options</h3>
-				</div>
-				<div class="block block5"> 
-					<h3>Proximity-based social features</h3>
-				</div>
-				<div class="block block6"> 
-					<h3>Flexible scheduling</h3>
-				</div>
+			<section class="caption">
+				<picture class="branding-pic">
+					<img src="assets/crosstown-branding2.png">
+				</picture>
 			</section>
 
-			<section class="title">
-				<h2>Lo-fi Prototypes & Usability Tests</h2>
-				<h4>With these ideas in mind, I created lo-fi prototypes for some aspects of the app I wanted to focus on, going through multiple rounds of testing, feedback, and iteration with potential users.</h4>
+
+			<section class="caption">
+				<picture class="branding-pic">
+					<img src="assets/crosstown-branding3.png">
+				</picture>
 			</section>
 
-			<div class="features">
-			<section class="app-preview">
-				<div class="section-title"><h3>① ACCOUNT CREATION (ONBOARDING)</h3></div>
-				<div class="table">
-					<div class="lofi-gif">
-						<picture>
-							<img src="assets/crosstown-lofi1.gif">
-						</picture>
-					</div>
-				</div>
-			</section>
-			<section class="lofi-caption">
-				<p>I knew that the onboarding process had to be robust in some capacity because I'd need to implement <b>security and verification features.</b> Safety is paramount, given that this app allows users to meet and interact with strangers.</p>
-				<p>With the feedback I got from user testing, I learned that I'd have to <b>streamline the process</b> a little bit better (along with more technical UI fixes).</p>
-			</section>
-
-			<section class="app-preview">
-				<div class="section-title"><h3>② PERSONALITY QUIZ</h3></div>
-				<div class="table">
-					<div class="lofi-gif">
-						<picture>
-							<img src="assets/crosstown-lofi2.gif">
-						</picture>
-					</div>
-				</div>
-			</section>
-			<section class="lofi-caption">
-				<p>Implementing a personality quiz was a great way to <b>put user preferences at the forefront</b>, but I needed to find a more effective way to introduce it and encourage users to complete it.</p>
-			</section>
-
-			<section class="app-preview">
-				<div class="section-title"><h3>③ EVENT SELECTION</h3></div>
-				<div class="table">
-					<div class="lofi-gif">
-						<picture>
-							<img src="assets/crosstown-lofi3.gif">
-						</picture>
-					</div>
-				</div>
-			</section>
-			<section class="lofi-caption">
-				<p>Easily being able to find events that best align with users' interests is one of the main hooks of the app. Confirming participation directly (like via <b>purchasing tickets</b>) enhances this aspect. I still needed to figure out how to better encourage participation, along with refining UI elements.</p>
+			<section class="caption">
+				<picture class="branding-pic">
+					<img src="assets/crosstown-branding4.png">
+				</picture>
+				<p>For the personality quiz, I created  characters based on the subway lines! Users get assigned one of these little guys if they complete the quiz, which will be present throughout their app experience.</p>
 			</section>
 		</div>
 
-		<section class="title">
-			<h2>Visual Design & Brand Identity</h2>
-			<h4>I took inspiration from the aesthetics of the New York City subway in creating my visual design system—distinctly NYC, with colors that recall its iconic train lines. I wanted to create a welcoming and inviting environment for users.</h4>
-		</section>
+		<section class="divider">. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</section>
 
-		<section class="caption">
-			<picture class="branding-pic">
-				<img src="assets/crosstown-branding1.png">
-			</picture>
-		</section>
+		<div class="casestudy-part" id="final-product">
 
-		<section class="caption">
-			<picture class="branding-pic">
-				<img src="assets/crosstown-branding2.png">
-			</picture>
-		</section>
+			<section class="agenda final-product">
+				<h1 id="final">❸ Final Product</h1>
+			</section>
 
-
-		<section class="caption">
-			<picture class="branding-pic">
-				<img src="assets/crosstown-branding3.png">
-			</picture>
-		</section>
-
-		<section class="caption">
-			<picture class="branding-pic">
-				<img src="assets/crosstown-branding4.png">
-			</picture>
-			<p>For the personality quiz, I created  characters based on the subway lines! Users get assigned one of these little guys if they complete the quiz, which will be present throughout their app experience.</p>
-		</section>
-
-		<section class="agenda final-product">
-			<h1>❹ Final Product</h1>
-		</section>
-
-		<section class="app-preview second">
-			<div class="section-title"><h3>HI-FIDELITY SCREENS</h3></div>
-			<div class="table">
-				<div class="app-gif">
-					<h2>Onboarding</h2>
-					<picture>
-						<img src="assets/crosstown-onboarding.gif">
-					</picture>
+			<section class="app-preview second">
+				<div class="section-title"><h3>HI-FIDELITY SCREENS</h3></div>
+				<div class="table">
+					<div class="app-gif">
+						<h2>Onboarding</h2>
+						<picture>
+							<img src="assets/crosstown-onboarding.gif">
+						</picture>
+					</div>
+					<div class="app-gif">
+						<h2>Personality Quiz</h2>
+						<picture>
+							<img src="assets/crosstown-personality.gif">
+						</picture>
+					</div>
+					<div class="app-gif">
+						<h2>Feed</h2>
+						<picture>
+							<img src="assets/crosstown-feed.gif">
+						</picture>
+					</div>
+					<div class="app-gif">
+						<h2>Event Page</h2>
+						<picture>
+							<img src="assets/crosstown-event.gif">
+						</picture>
+					</div>
 				</div>
-				<div class="app-gif">
-					<h2>Personality Quiz</h2>
-					<picture>
-						<img src="assets/crosstown-personality.gif">
-					</picture>
-				</div>
-				<div class="app-gif">
-					<h2>Feed</h2>
-					<picture>
-						<img src="assets/crosstown-feed.gif">
-					</picture>
-				</div>
-				<div class="app-gif">
-					<h2>Event Page</h2>
-					<picture>
-						<img src="assets/crosstown-event.gif">
-					</picture>
-				</div>
-			</div>
-		</section>
+			</section>
+		</div>
+
+		<section class="divider">. ݁₊ ⊹ . ݁ ⟡ ݁ . ⊹ ₊ ݁.</section>
 
 		<!-- add next steps here -->
 				
