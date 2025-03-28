@@ -70,6 +70,7 @@ body.scrolled .casestudy-menu {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 }
 
 #casestudy-menu {
@@ -166,7 +167,7 @@ main{
 	margin: 0.5rem;
 	display: flex;
 	align-items: center;
-	max-width: 70vw;
+	/* max-width: 70vw; */
 	height: 95vh;
 	padding-right: 1rem;
 	flex-direction: column;
@@ -218,14 +219,29 @@ main .divider:nth-child(2){
 h1{
 	font-family: var(--title-font);
 	font-size: 4rem;
-	padding-left: 2rem;
+	/* padding-left: 2rem; */
+	background: black;
+	width: 100vw;
+	padding: 2rem;
+	color: var(--color-lightgreen);
+}
+
+
+
+.casestudy-part{
+	display: flex;
+	flex-direction: column;
+	width: 70vw;
+	justify-items: center;
+	align-items: center;
+	margin: 0 auto;
 }
 
 h4{
 	font-weight: 400;
 	max-width: 60%;
 	margin-left: 2rem;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	padding-right: 1rem;
 
 }
@@ -274,6 +290,7 @@ h2 {
 	justify-items: center;
 	/* margin-bottom: 5rem; */
 }
+
 
 .section-title{
 	border-bottom: var(--border-style);
@@ -340,7 +357,7 @@ h2 {
 }
 
 .caption p{
-	font-size: 1.2rem;
+	font-size: 1rem;
 	text-align: center;
 }
 
@@ -499,7 +516,7 @@ h2 {
 
 .lofi-caption{
 	/* margin-top: -3rem; */
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .branding-pic img{

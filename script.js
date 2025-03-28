@@ -228,7 +228,6 @@ document.getElementById("reset").addEventListener("click", () => {
 });
 
 //FUNCTION: BACK TO TOP, CASE STUDY MENU
-//FUNCTION: BACK TO TOP, CASE STUDY MENU
 window.addEventListener("scroll", function () {
   const topButton = document.getElementById("top");
   const casestudyMenu = document.getElementById('casestudy-menu');
@@ -265,7 +264,7 @@ window.addEventListener("scroll", function () {
 //FUNCTION: CASE STUDY MENU NAV HIGHLIGHT
 // Get the menu links and divs with the class 'casestudy-part'
 const menuLinks = document.querySelectorAll('#casestudy-menu li a');
-const casestudyParts = document.querySelectorAll('.casestudy-part');
+const casestudyParts = document.querySelectorAll('.casestudy');
 
 // Function to highlight the menu item when the user scrolls into the divs
 function highlightMenuItem() {
