@@ -238,6 +238,32 @@ document.getElementById("reset").addEventListener("click", () => {
 //   }
 // });
 
+//FUNCTION: DROPDOWN
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents closing when clicking inside
+
+        // Toggle opacity
+        if (dropdownMenu.style.opacity === "1") {
+            dropdownMenu.style.opacity = "0";
+            dropdownMenu.style.pointerEvents = "none"; // Disable interactions when hidden
+        } else {
+            dropdownMenu.style.opacity = "1";
+            dropdownMenu.style.pointerEvents = "auto"; // Enable interactions
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.opacity = "0";
+            dropdownMenu.style.pointerEvents = "none";
+        }
+    });
+
+
 
 
 // FUNCTION: SVG SHAKE

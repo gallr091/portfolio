@@ -65,8 +65,16 @@ a {
 	/* color: black; */
 }
 
-#website-links li:first-of-type a{
+/* #website-links li:first-of-type a{
 		color: var(--color-lightgreen);
+} */
+
+#home-button a{
+	color: var(--color-lightgreen);
+}
+
+#projectone{
+	color: black;
 }
 
 .contact{
@@ -530,3 +538,7 @@ h2{
 	color: var(--color-background);
 }
   
+
+#project-one{
+	color: black;
+}
