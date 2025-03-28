@@ -155,12 +155,12 @@ a {
 	.dropdown-menu li a {
 		text-decoration: none;
 		color: black;
-		display: block;
+		/* display: block; */
 	}
 	
 	.dropdown-menu li:hover {
 		background: black;
-		color: var(--color-background);
+		color: var(--color-lightgreen);
 	}
 
 	.dropdown-menu li:first-child:hover {

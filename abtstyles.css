@@ -85,14 +85,31 @@ ul .link{
 	background: var(--color-lightgreen);
 } 
 
+#about-button{
+	background: black;
+}
 
-#website-links li:nth-of-type(2) a {
+#about-button a{
 	color: var(--color-lightgreen);
 }
 
+
+.dropdown-menu li:hover {
+	color: var(--color-lightgreen);
+}
+
+.dropdown-menu li a:hover {
+	color: var(--color-lightgreen);
+}
+
+
+/* #website-links li:nth-of-type(2) a {
+	color: var(--color-lightgreen);
+} 
+
 #website-links li:nth-of-type(2) {
 	background: black;
-}
+} */
 
 
 

@@ -228,15 +228,15 @@ document.getElementById("reset").addEventListener("click", () => {
 });
 
 //FUNCTION: BACK TO TOP
-// window.addEventListener("scroll", function () {
-//   const topButton = document.querySelector(".top");
-  
-//   if (window.scrollY > window.innerHeight) { // After 100vh
-//       topButton.style.bottom = "1rem"; // Show button
-//   } else {
-//       topButton.style.bottom = "-50px"; // Hide button
-//   }
-// });
+window.addEventListener("scroll", function () {
+  const topButton = document.getElementById("top");
+  if (window.scrollY > window.innerHeight) {
+      document.body.classList.add("scrolled");
+  } else {
+      document.body.classList.remove("scrolled");
+  }
+});
+
 
 //FUNCTION: DROPDOWN
 const dropdownToggle = document.querySelector(".dropdown-toggle");
