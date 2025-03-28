@@ -262,6 +262,40 @@ window.addEventListener("scroll", function () {
 
 });
 
+//FUNCTION: CASE STUDY MENU NAV HIGHLIGHT
+// Get the menu links and divs with the class 'casestudy-part'
+const menuLinks = document.querySelectorAll('#casestudy-menu li a');
+const casestudyParts = document.querySelectorAll('.casestudy-part');
+
+// Function to highlight the menu item when the user scrolls into the divs
+function highlightMenuItem() {
+    let currentPart = null;
+
+    // Loop through all divs to check which one is currently in view
+    casestudyParts.forEach(part => {
+        const rect = part.getBoundingClientRect();
+        if (rect.top <= 0 && rect.bottom >= 0) {  // Check if the div is in the viewport
+            currentPart = part.id;  // Get the ID of the div
+        }
+    });
+
+    // Loop through the menu links and remove the 'active' class
+    menuLinks.forEach(link => {
+        if (link.getAttribute('href').slice(1) === currentPart) {
+            link.classList.add('active');  // Add active class to the current link
+        } else {
+            link.classList.remove('active');  // Remove active class from other links
+        }
+    });
+}
+
+// Listen to scroll event
+window.addEventListener('scroll', highlightMenuItem);
+
+// Optional: Initial check when page loads in case a div is already in view
+highlightMenuItem();
+
+
 
 //FUNCTION: DROPDOWN
 const dropdownToggle = document.querySelector(".dropdown-toggle");
