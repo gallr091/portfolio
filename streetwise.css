@@ -1,0 +1,134 @@
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+nav {
+	position: fixed;
+	width: 98%;
+	padding-left: 5rem;
+	padding-right: 6rem;
+}
+
+.dropdown-menu {
+	top: 45px;
+}
+
+
+#top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--color-lightgreen);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1.5px solid #000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+	z-index: 1000;
+}
+
+#top:hover{
+	cursor: pointer;
+	background: black;
+}
+
+#top a:hover{
+	color: var(--color-lightgreen);
+}
+
+body.scrolled #top {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.scrolled .casestudy-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+header{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/* margin-top: 3rem; */
+	max-width:101vw;
+	margin-left: -1rem;
+}
+
+picture{
+	width: 100%;
+	/* margin-left: -1rem; */
+	margin-top: -1rem;
+}
+
+header img{
+	/* border-radius: 50px; */
+	width: 101%;
+	margin-top: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* height: 100vh; */
+}
+
+.coming-soon{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin: 1rem;
+	margin-bottom: 5rem;
+
+}
+
+.coming-soon h3{
+	margin-top: -2rem;
+	margin-bottom: 3rem;
+}
+
+.coming-soon h1{
+	font-family: var(--title-font);
+	font-size: 4rem;
+	/* padding-left: 2rem; */
+	width: 100vw;
+	text-align: center;
+}
+
+
+.pdf {
+	display: flex;
+	margin-right: 1rem;
+	border:	1.5px solid #000;
+	text-align: center;
+	align-items: center;
+	/* line-height: 5vh; */
+	border-radius: 50px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	background-color: var(--color-lightgreen);
+	font-size: 1.5rem;
+	padding: 1rem;
+}
+
+.pdf:hover{
+	background-color: black;
+	color: var(--color-lightgreen);
+	cursor: pointer;
+}
+
+.pdf:hover a{
+	color: var(--color-lightgreen);
+	cursor: pointer;
+}
