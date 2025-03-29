@@ -151,7 +151,9 @@ a {
 		/* padding: 0.5rem; */
 		padding-right: 0.5rem;
 		padding-left: 0.5rem;
+		line-height: 5vh;
 	}
+
 	
 	.dropdown-menu li a {
 		text-decoration: none;

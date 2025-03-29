@@ -227,14 +227,15 @@ document.getElementById("reset").addEventListener("click", () => {
 
 });
 
-//FUNCTION: BACK TO TOP, CASE STUDY MENU
+//FUNCTION: BACK TO TOP, CASE STUDY MENU, CONTACT NAV
 window.addEventListener("scroll", function () {
   const topButton = document.getElementById("top");
   const casestudyMenu = document.getElementById('casestudy-menu');
   const contactLinks = document.querySelectorAll('.contact a');  // Targeting <a> inside .contact
-  
+  const finalProduct = document.getElementById("final-product");
+
   // Set the scroll position to trigger both elements at the same time
-  const triggerScroll = 500;  // Change this value to control when both items appear
+  const triggerScroll = 450;  // Change this value to control when both items appear
 
   // Back to Top button
   if (window.scrollY > triggerScroll) {
@@ -251,9 +252,16 @@ window.addEventListener("scroll", function () {
   }
 
   // Contact Links (targeting <a> inside .contact)
-  contactLinks.forEach(function(item) {  // Loop through each <a> element inside .contact
-    if (window.scrollY > triggerScroll) {
-      item.style.color = 'black';  // Change the text color to black when scrolled
+  
+  const finalProductRect = finalProduct.getBoundingClientRect();
+  const inViewport = finalProductRect.top <= window.innerHeight - 650 && finalProductRect.bottom >= 0;
+
+  // Contact Links (targeting <a> inside .contact)
+  contactLinks.forEach(function(item) {
+    if (inViewport) {
+      item.style.color = 'grey';  // Change to grey when scrolling on final-product
+    } else if (window.scrollY > triggerScroll) {
+      item.style.color = 'black';  // Change text color to black when scrolled
     } else {
       item.style.color = '#F0FFF0';  // Default color before scroll
     }
@@ -269,14 +277,17 @@ const casestudyParts = document.querySelectorAll('.casestudy');
 // Function to highlight the menu item when the user scrolls into the divs
 function highlightMenuItem() {
     let currentPart = null;
+    const buffer = window.innerHeight * 0.4; // Adjust this to increase the bounds
 
-    // Loop through all divs to check which one is currently in view
     casestudyParts.forEach(part => {
         const rect = part.getBoundingClientRect();
-        if (rect.top <= 0 && rect.bottom >= 0) {  // Check if the div is in the viewport
-            currentPart = part.id;  // Get the ID of the div
+
+        // Increase the bounds by allowing sections to be considered "active" earlier and stay active longer
+        if (rect.top <= buffer && rect.bottom >= buffer) {
+            currentPart = part.id;
         }
     });
+
 
     // Loop through the menu links and remove the 'active' class
     menuLinks.forEach(link => {

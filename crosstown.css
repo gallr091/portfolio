@@ -25,6 +25,7 @@ ul .contact a{
 	color: var(--color-lightgreen);
 }
 
+
 #top {
     position: fixed;
     bottom: 20px;
@@ -37,6 +38,7 @@ ul .contact a{
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+	z-index: 1000;
 }
 
 #top:hover{
@@ -224,6 +226,7 @@ h1{
 	width: 100vw;
 	padding: 2rem;
 	color: var(--color-lightgreen);
+	text-align: center;
 }
 
 
@@ -368,7 +371,7 @@ h2 {
 	/* align-items: center;  */
 	gap: 20px; 
 	width: 70vw; 
-	margin-top: 3rem;
+	margin-top: 2rem;
 	margin-bottom: 3rem;
 }
 
@@ -386,14 +389,21 @@ h2 {
 }
 
 .insights h3{
-	display: flex;
+	/* display: flex; */
 	width: auto;
 	font-family: var(--title-font);
-	height: 50%;
-	padding: 1rem;
+	/* height: 50%; */
+	padding-left: 1rem;
+	padding-right: 1rem;
 	font-size: 1.5rem;
 	/* align-items: center; */
 	justify-items: center;
+	text-align: center;
+}
+
+.insights p{
+	margin-top: -1rem;
+	padding: 1rem;
 	text-align: center;
 }
 
@@ -418,8 +428,8 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	height: auto;
-	height: 80%;
-
+	height: 60%;
+	width: 70%;
 }
 
 .smaller img{
@@ -526,8 +536,103 @@ h2 {
 }
 
 
-.second{
+.app-final{
 	margin-top:0;
+	/* border-color: var(--color-lightgreen); */
+	/* color: var(--color-lightgreen); */
+	background-color: var(--color-lightgreen);
+	margin-bottom: 3rem;
+}
+
+#final-product{
+background-color: black;
+padding-bottom: 2rem;
+}
+
+.stack{
+	display:flex;
+	flex-direction: column;
+	margin-top: 1rem;
 }
 
 
+.screen{
+	display: flex;
+	/* gap: 1rem; */
+	justify-items: space-evenly;
+	/* justify-content: center; */
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.screenz{
+	display: flex;
+	gap: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.final-screen {
+	/* height: 20%; */
+	margin-top: 1rem;
+	display: flex;
+	/* justify-items: center; */
+	width: auto;
+}
+
+.final-screen img{
+	width: 250px;
+	margin: 0; 
+}
+
+.app-description{
+	margin: 2rem;
+}
+
+.app-description p{
+	line-height: 1.3rem;
+}
+
+
+.gif-marquee {
+	display: flex;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100vw;
+	position: relative;
+	margin-top: 3rem;
+	margin-bottom: -3rem;
+	z-index: -10;
+  }
+  
+  .gif-marquee .marquee-content {
+	display: flex;
+	gap: 1rem; /* Adjust spacing between images */
+	animation: marquee 20s linear infinite;
+  }
+  
+  .gif-marquee .marquee-content img {
+	width: 200px; /* Adjust size */
+	height: auto;
+  }
+  
+  @keyframes marquee {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(-50%);
+	}
+  }
+  
+  /* Duplicate the content to create a seamless infinite effect */
+  .gif-marquee .marquee-content {
+	display: flex;
+	animation: marquee 50s linear infinite;
+	width: max-content;
+  }
+
+  .thanks{
+	padding: 5rem;
+  }
+  
