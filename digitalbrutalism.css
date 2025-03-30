@@ -120,6 +120,74 @@ h2 {
 	line-height: 0.8;
 }
 
+.table{
+	display: flex;
+    flex-direction: row;
+	width: 100%;
+	align-items: center;
+	justify-content: space-evenly; 
+}
+
+.side-caption {
+	max-width: 70%;
+	/* margin: 1rem; */
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 5rem; 
+    /* width: 100%; */
+	margin-top: 5rem;
+	/* margin-bottom: 3rem; */
+}
+
+.side-caption .project-item {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.project-item {
+    width: auto; /* Allow it to size naturally */
+    display: flex;
+    justify-content: center;
+}
+
+.project-item img {
+    /* width: 100%;  */
+    max-width: 500px; /* Increase to a comfortable size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px;
+}
+
+.description{
+	width: 100%;
+}
+
+
+.side-caption p {
+    /* max-width: 40%;  */
+    font-size: 1rem; /* Adjust font size if needed */
+    line-height: 1.5; /* Improve readability */
+}
+
+#vertical-pic{
+	margin-top: -3rem;
+}
+
+#smaller{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70%;
+}
+
+#smaller img{
+	height: 90%;
+	align-items: center;
+}
+
+
+
 
 .pdf {
 	display: flex;
@@ -292,8 +360,9 @@ align-items: center;
 	position: relative;
 	/* margin-top: 3rem; */
 	z-index: -10;
-	margin-top: 10rem;
-	margin-bottom: 10rem;
+	/* margin-top: 10rem; */
+	margin-bottom: 8rem;
+	margin-top: -3rem;
   }
   
   .gif-marquee .marquee-content {
@@ -303,8 +372,8 @@ align-items: center;
   }
   
   .gif-marquee .marquee-content img {
-	width: 200px; /* Adjust size */
-	height: auto;
+	/* width: 200px;  */
+	height: 350px;
   }
   
   @keyframes marquee {
@@ -319,7 +388,7 @@ align-items: center;
   /* Duplicate the content to create a seamless infinite effect */
   .gif-marquee .marquee-content {
 	display: flex;
-	animation: marquee 50s linear infinite;
+	animation: marquee 60s linear infinite;
 	width: max-content;
   }
 
