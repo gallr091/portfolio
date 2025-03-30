@@ -288,6 +288,10 @@ h2{
 	font-family: var(--title-font);
 }
 
+#work-title{
+	padding-top: 0.5rem;
+}
+
 .arrows h2{
 	border: 1.5px solid #000; 
 	border-radius: 50%;
