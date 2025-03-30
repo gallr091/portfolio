@@ -141,6 +141,7 @@ a {
 
 	ul a:hover{
 		color: var(--color-lightgreen);
+		cursor: pointer;
 	}
 
 	ul .contact{
