@@ -549,11 +549,17 @@ h2{
 }
 
 @media (max-width: 600px) {
+
+html{
+	 overflow-x: hidden;
+}
+
   body {
     flex-direction: column;
     overflow-x: hidden;
     font-size: 0.9rem;
 	 overflow-y: visible;
+	 width: auto;
   }
 
   nav {
@@ -618,18 +624,39 @@ h2{
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: visible;
-    width: 100%;
+	 width: 100% !important;
   }
 
+  .scroll-container {
+  white-space: normal;
+}
+
+.scroll-grid-ux img {
+	filter: none;
+}
+
   .project {
-    width: 100%;
+    width: 99%;
     height: auto;
     margin: 1rem 0;
   }
 
+  .project-desc{
+	flex-direction: column;
+  }
+
+  .project-title{
+	margin-bottom: 0;
+  }
+
+  .project-details{
+	margin-top: 0;
+	font-size: 0.5rem;
+  }
+
   .scroll-grid-ux img {
     height: auto;
-    border-radius: 40px 40px 0 0;
+    /* border-radius: 40px 40px 0 0; */
   }
 
   footer {
