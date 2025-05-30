@@ -78,7 +78,9 @@ h2{
 	color: var(--color-lightgreen);
 }
 
-
+.contact-mobile, #contact-mobile{
+	display: none;
+}
 
 ul .link{
 	color: black;
@@ -253,7 +255,7 @@ html{
 	 width: auto;
   }
 
-  nav {
+ nav {
     flex-direction: column;
     height: auto;
     padding: 1rem;
@@ -261,7 +263,7 @@ html{
     align-items: flex-start;
   }
 
-  #website-links, #contact {
+  #website-links {
     flex-direction: row;
     width: 100%;
 	gap: 1rem;
@@ -334,6 +336,7 @@ html{
   white-space: normal;
 }
 
+
 .scroll-grid-ux img {
 	filter: none;
 }
@@ -371,6 +374,7 @@ html{
     /* margin: 1rem 1rem 0 1rem; */
     text-align: center;
 	padding-top: 3rem;
+	padding-bottom: 0.5rem;
   }
 
   .toggle-view-button {
@@ -418,5 +422,32 @@ html{
 	margin-left: 0;
 	margin-bottom: 5rem;
 }
+
+
+  footer {
+    /* margin: 1rem 1rem 0 1rem; */
+    text-align: center;
+	padding-top: 3rem;
+	display: flex;
+	flex-direction: column;
+	margin-left: -0.1rem;
+	gap: 0.5rem;
+	/* padding-bottom: 1rem; */
+  }
+
+  #contact-mobile{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	font-size: 0.8rem;
+  }
+
+  .contact-mobile {
+	display: block;
+  }
+
+  .contact, #contact{
+	display: none;
+  }
 
 }
