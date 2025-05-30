@@ -237,3 +237,186 @@ ul .link{
 .bio, .list{
 	margin-top: -2rem;
    }
+
+
+@media (max-width: 600px) {
+
+html{
+	 overflow-x: hidden;
+}
+
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+    font-size: 0.9rem;
+	 overflow-y: visible;
+	 width: auto;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+	margin-left: -0.2rem;
+    align-items: flex-start;
+  }
+
+  #website-links, #contact {
+    flex-direction: row;
+    width: 100%;
+	gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul .link,
+  ul .contact {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  main {
+    flex-direction: column;
+    /* align-items: stretch; */
+    height: auto;
+    margin: 1rem;
+  }
+
+  #rice {
+    width: 100%;
+	margin: 0;
+    margin-bottom: 2rem;
+	/* margin-left:0.5rem; */
+  }
+
+  .featured-work {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    /* padding: 1rem; */
+  }
+
+  .thumbnails{
+	padding: 1rem;
+}
+
+  .top {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .top h2{
+	font-size: 2rem;
+  }
+
+  picture{
+	margin-left: -0.25rem;
+	margin-top: 0.5rem;
+  }
+
+  .arrows {
+    /* margin-top: 1rem; */
+    /* flex-wrap: wrap; */
+    gap: 0.5rem;
+  }
+
+  .scroll-container,
+  .scroll-grid-ux {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: visible;
+	 width: 100% !important;
+  }
+
+  .scroll-container {
+  white-space: normal;
+}
+
+.scroll-grid-ux img {
+	filter: none;
+}
+
+#work-title{
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
+  .project {
+    width: 99%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .project-desc{
+	flex-direction: column;
+  }
+
+  .project-title{
+	margin-bottom: 0;
+  }
+
+  .project-details{
+	margin-top: 0;
+	font-size: 0.5rem;
+  }
+
+  .scroll-grid-ux img {
+    height: auto;
+    /* border-radius: 40px 40px 0 0; */
+  }
+
+  footer {
+    /* margin: 1rem 1rem 0 1rem; */
+    text-align: center;
+	padding-top: 3rem;
+  }
+
+  .toggle-view-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #description{
+	display: none;
+  }
+
+  #description p:nth-child(2),
+  #description p:nth-child(3) {
+    padding-top: 1rem;
+    margin-top: 0;
+  }
+  
+  /* .arrows{
+	display: none;
+  } */
+
+  .draggable{
+	display: none; 
+  }
+
+  #toggleDoodles, #reset{
+	display: none;
+}
+
+#about-me-content{
+	flex-direction: column-reverse;
+	height: auto;
+	margin: 0.5rem;
+	width:100%;
+}
+
+.gallery{
+	width: 100%;
+	/* margin-bottom: 3rem; */
+	/* display: none; */
+}
+
+.about-me-text{
+	height: auto;
+	margin-left: 0;
+	margin-bottom: 5rem;
+}
+
+}
