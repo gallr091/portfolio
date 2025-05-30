@@ -245,11 +245,18 @@ window.addEventListener("scroll", function () {
   }
 
   // Case Study Menu
+if (window.innerWidth > 600) {
+  // Only run on desktop
   if (window.scrollY > triggerScroll) {
     casestudyMenu.style.opacity = 1;
   } else {
-    casestudyMenu.style.opacity = 0; 
+    casestudyMenu.style.opacity = 0;
   }
+} else {
+  // Always visible on mobile
+  casestudyMenu.style.opacity = 1;
+}
+
 
   // Contact Links (targeting <a> inside .contact)
   
@@ -268,42 +275,35 @@ window.addEventListener("scroll", function () {
   });
 
 });
-
-//FUNCTION: CASE STUDY MENU NAV HIGHLIGHT
-// Get the menu links and divs with the class 'casestudy-part'
+// FUNCTION: CASE STUDY MENU NAV HIGHLIGHT
 const menuLinks = document.querySelectorAll('#casestudy-menu li a');
 const casestudyParts = document.querySelectorAll('.casestudy');
 
-// Function to highlight the menu item when the user scrolls into the divs
 function highlightMenuItem() {
     let currentPart = null;
-    const buffer = window.innerHeight * 0.4; // Adjust this to increase the bounds
+
+    // Detect mobile and adjust buffer
+    const isMobile = window.innerWidth <= 600;
+    const buffer = isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.4;
 
     casestudyParts.forEach(part => {
         const rect = part.getBoundingClientRect();
-
-        // Increase the bounds by allowing sections to be considered "active" earlier and stay active longer
-        if (rect.top <= buffer && rect.bottom >= buffer) {
+        if (rect.top <= buffer && rect.bottom >= 0) {
             currentPart = part.id;
         }
     });
 
-
-    // Loop through the menu links and remove the 'active' class
     menuLinks.forEach(link => {
         if (link.getAttribute('href').slice(1) === currentPart) {
-            link.classList.add('active');  // Add active class to the current link
+            link.classList.add('active');
         } else {
-            link.classList.remove('active');  // Remove active class from other links
+            link.classList.remove('active');
         }
     });
 }
 
-// Listen to scroll event
 window.addEventListener('scroll', highlightMenuItem);
-
-// Optional: Initial check when page loads in case a div is already in view
-highlightMenuItem();
+highlightMenuItem(); // Run on load too
 
 
 
