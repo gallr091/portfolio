@@ -566,6 +566,7 @@ html{
     flex-direction: column;
     height: auto;
     padding: 1rem;
+	margin-left: -0.2rem;
     align-items: flex-start;
   }
 
@@ -593,7 +594,9 @@ html{
 
   #rice {
     width: 100%;
+	margin: 0;
     margin-bottom: 2rem;
+	margin-left:0.5rem;
   }
 
   .featured-work {
@@ -635,6 +638,11 @@ html{
 	filter: none;
 }
 
+#work-title{
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
   .project {
     width: 99%;
     height: auto;
@@ -660,8 +668,9 @@ html{
   }
 
   footer {
-    margin: 2rem auto 1rem auto;
+    /* margin: 1rem 1rem 0 1rem; */
     text-align: center;
+	padding-top: 3rem;
   }
 
   .toggle-view-button {
