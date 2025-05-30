@@ -547,3 +547,118 @@ h2{
 #project-one{
 	color: black;
 }
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+    font-size: 0.9rem;
+	 overflow-y: visible;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  #website-links, #contact {
+    flex-direction: row;
+    width: 100%;
+	gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul .link,
+  ul .contact {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    margin: 1rem;
+  }
+
+  #rice {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .featured-work {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    /* padding: 1rem; */
+  }
+
+  .thumbnails{
+	padding: 1rem;
+}
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .arrows {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .scroll-container,
+  .scroll-grid-ux {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+  }
+
+  .project {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .scroll-grid-ux img {
+    height: auto;
+    border-radius: 40px 40px 0 0;
+  }
+
+  footer {
+    margin: 2rem auto 1rem auto;
+    text-align: center;
+  }
+
+  .toggle-view-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #description p:nth-child(2),
+  #description p:nth-child(3) {
+    padding-top: 1rem;
+    margin-top: 0;
+  }
+
+  .arrows{
+	display: none;
+  }
+
+  .draggable{
+	display: none; 
+  }
+
+  #toggleDoodles, #reset{
+	display: none;
+}
+
+
+}
