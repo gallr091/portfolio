@@ -645,6 +645,8 @@ padding-bottom: 2rem;
 
 	html{
 		overflow-x: hidden;
+		scroll-behavior: smooth;
+
 	}
 
 	nav{
@@ -652,6 +654,7 @@ padding-bottom: 2rem;
 	}
 
 	header picture{
+		margin-top: 3rem;
 		width: 130%;
 	}
 
@@ -744,19 +747,22 @@ padding-bottom: 2rem;
 
 	#casestudy-menu {
 	list-style: none;
-	position: sticky;
+	position: fixed;
+	width: 100vw;
 	top: 0;
+	left: 0;
 	z-index: 1000;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	width: 100%;
-	padding: 0 1rem;
+	border: none;
 	border-bottom: 1.5px solid #000;
 	background: var(--color-lightgreen);
 	text-align: center;
 	opacity: 1;
 	transition: none;
+	border-radius: 0;
 }
 
 #casestudy-menu li {
@@ -789,6 +795,13 @@ padding-bottom: 2rem;
 
 	.caption picture{
 	width: 90vw;	
+	}
+
+	.caption p{
+		font-size: 0.8rem;
+		width: 90vw;
+		text-align: left;
+		margin-left: 1rem;
 	}
 
 	.condensed {
@@ -832,6 +845,12 @@ padding-bottom: 2rem;
 	font-size: 1rem;
   }
 
+  .lofi-caption{
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	font-size: 0.8rem;
+  }
+
   .features {
 	margin-top: 0;
 	width: 90vw;
@@ -840,6 +859,7 @@ padding-bottom: 2rem;
   .features .app-preview{
 	width: 90vw;
 	margin-top: 3rem;
+	border-radius: 40px;
   }
 
   .features .app-preview .table{
@@ -896,5 +916,14 @@ padding-bottom: 2rem;
 		font-size: 0.8rem;
 	}
 
+
+
+#top {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+	opacity: 1;
+	font-size: 0.5rem;
+}
 
 }
