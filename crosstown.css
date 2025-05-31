@@ -282,7 +282,7 @@ h2 {
 .app-preview {
     display: flex;
     flex-direction: column;
-	width: 70vw;
+	/* width: 70vw; */
 	justify-content: space-between; 
 	/* border: var(--border-style);
     border-radius: 50px; */
@@ -765,6 +765,7 @@ padding-bottom: 2rem;
 	border-radius: 0;
 }
 
+
 #casestudy-menu li {
   font-size: 0.6rem;
   flex: 1;
@@ -917,13 +918,22 @@ padding-bottom: 2rem;
 	}
 
 
+	#top {
+		position: fixed;
+		bottom: 5px;
+		left: 5px;
+		opacity: 1;
+		font-size: 0.5rem;
+	}
 
-#top {
-    position: fixed;
-    bottom: 5px;
-    left: 5px;
-	opacity: 1;
-	font-size: 0.5rem;
-}
+	#casestudy-menu li:first-child:hover {
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+
+	#casestudy-menu  li:last-child:hover {
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
 
 }

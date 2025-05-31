@@ -275,35 +275,39 @@ if (window.innerWidth > 600) {
   });
 
 });
+
+
 // FUNCTION: CASE STUDY MENU NAV HIGHLIGHT
 const menuLinks = document.querySelectorAll('#casestudy-menu li a');
 const casestudyParts = document.querySelectorAll('.casestudy');
 
 function highlightMenuItem() {
-    let currentPart = null;
+	let currentPart = null;
+const isMobile = window.innerWidth <= 768;
+const buffer = isMobile ? window.innerHeight * 0.6 : window.innerHeight * 0.4;
+  
 
-    // Detect mobile and adjust buffer
-    const isMobile = window.innerWidth <= 600;
-    const buffer = isMobile ? window.innerHeight * 0.8 : window.innerHeight * 0.4;
+	casestudyParts.forEach(part => {
+		const rect = part.getBoundingClientRect();
+      if (rect.top <= buffer && rect.bottom > 0) {
+      currentPart = part.id;
+    }
+	});
 
-    casestudyParts.forEach(part => {
-        const rect = part.getBoundingClientRect();
-        if (rect.top <= buffer && rect.bottom >= 0) {
-            currentPart = part.id;
-        }
-    });
 
-    menuLinks.forEach(link => {
-        if (link.getAttribute('href').slice(1) === currentPart) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+	menuLinks.forEach(link => {
+		const targetId = link.getAttribute('href').slice(1);
+		if (targetId === currentPart) {
+			link.classList.add('active');
+		} else {
+			link.classList.remove('active');
+		}
+	});
 }
 
 window.addEventListener('scroll', highlightMenuItem);
-highlightMenuItem(); // Run on load too
+window.addEventListener('resize', highlightMenuItem);
+highlightMenuItem(); // run on load
 
 
 
