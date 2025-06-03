@@ -973,6 +973,8 @@ padding-bottom: 2rem;
   padding-top: 4rem;
   z-index: 9998;
   overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 nav{
