@@ -1033,6 +1033,11 @@ nav{
 	gap: 0.5rem;
 }
 
+#works li:hover{
+	color: black;
+	opacity: 0.5;
+}
+
 #website-links li,
 #contact li {
     text-align: center;
