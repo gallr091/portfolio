@@ -119,8 +119,7 @@ a {
 		cursor: pointer;
 	}
 
-	ul .link a:hover{
-		/* background-color: black; */
+	ul .link:hover > a{
 		color: var(--color-lightgreen);
 		cursor: pointer;
 	}
@@ -192,14 +191,14 @@ a {
 
 
 	.dropdown-menu li:hover {
-		background-color: black;
 		color: var(--color-lightgreen);
+		background-color: black;
 		cursor: pointer;
 	}
 	
 
 
-	.dropdown-menu li a:hover {
+	.dropdown-menu li:hover a {
 		color: var(--color-lightgreen);
 	}
 
