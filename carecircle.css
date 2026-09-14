@@ -695,7 +695,7 @@ padding-bottom: 2rem;
   
 
   #overlay-nav, #menu-toggle{
-	display: hide;
+	display: none;
   }
 
 
