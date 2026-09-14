@@ -120,7 +120,7 @@ a {
 	}
 
 	ul .link a:hover{
-		background-color: black;
+		/* background-color: black; */
 		color: var(--color-lightgreen);
 		cursor: pointer;
 	}
@@ -315,11 +315,13 @@ footer{
 
 /* random icons */
 .draggable {
-    width: 120px; 
+    width: 80px;
     height: auto;
     cursor: grab;
 	z-index: 1000;
 	-webkit-filter: drop-shadow(5px 5px 5px 	#3b3b3b);
 	filter: drop-shadow(5px 5px 5px 	#3b3b3b);
   }
+
+  
 
