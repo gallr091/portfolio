@@ -42,7 +42,7 @@ nav {
 	background: black;
 }
 
-#top a:hover{
+#top:hover a{
 	color: var(--color-lightgreen);
 }
 
