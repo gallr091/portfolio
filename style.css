@@ -229,7 +229,7 @@ footer{
 }
 
 #toggleDoodles, #reset{
-	cursor: alias;
+	cursor: pointer;
 }
 
 #toggleDoodles:hover, #reset:hover{
@@ -346,7 +346,7 @@ h2{
 	background-color: black;
 	color: var(--color-lightgreen);
 	transition: 0.3s ease-in-out;
-	cursor: alias;
+	cursor: pointer;
 	transform: scale(0.95);
   }
   
@@ -459,18 +459,22 @@ h2{
 
 .grid-view .scroll-grid-ux {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 0.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
     width: 100%;
-    height: 100%; 
-    overflow-y: auto; 
-    max-height: 500px; 
-	border-radius: 0 0 40px 40px;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 500px;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 0 0 40px 40px;
 }
 
 .grid-view .project {
-    width: 90%;
-    margin: 1rem;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
@@ -483,13 +487,13 @@ h2{
     border-radius: 48px 48px 0 0;
     filter: grayscale(100%) contrast(100%);
     border-bottom: 1.5px solid #000;
-    cursor: alias;
+    cursor: pointer;
 }
 
 .scroll-grid-ux img:hover {
     filter: none;
     transition: 0.3s ease-in-out;
-    cursor: alias;
+    cursor: pointer;
 }
 
 
@@ -503,13 +507,13 @@ h2{
 	border-radius: 48px 48px 0px 0px;
 	filter: grayscale(100%) contrast(100%);
 	border-bottom:	1.5px solid #000; 
-	cursor: alias;
+	cursor: pointer;
   }
 
   .scroll-grid-ux img:hover{
 	filter: none;
 	transition: 0.3s ease-in-out;
-	cursor: alias;
+	cursor: pointer;
   }
 
   .scroll-grid-ux::after {
@@ -550,6 +554,20 @@ h2{
 
 #project-one{
 	color: black;
+}
+
+/* GRID VIEW TEXT ONLY */
+
+.grid-view .project-title h5 {
+    font-size: 0.6rem;
+}
+
+.grid-view .project-title h2 {
+    font-size: 1.5rem;
+}
+
+.grid-view .project-title h4 {
+    font-size: 0.6rem;
 }
 
 @media (max-width: 600px) {
@@ -664,6 +682,8 @@ html{
   .project-title{
 	margin-bottom: 0;
   }
+
+  
 
   .project-details{
 	margin-top: 0;
