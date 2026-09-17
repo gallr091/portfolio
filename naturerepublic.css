@@ -224,9 +224,10 @@ align-items: center;
 	font-size: 1.5rem;
 }
 
+
 .table{
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
 	width: 80%;
 	align-items: center;
 	justify-content: space-evenly; 
