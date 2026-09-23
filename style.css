@@ -391,6 +391,68 @@ h2{
 	padding-right: 1rem;
   }
 
+
+.project-desc {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	padding: 0.8rem 1.25rem 1.1rem;
+	margin: 0;
+
+	box-sizing: border-box;
+	line-height: normal;
+}
+
+.project-title {
+	flex: 1;
+	min-width: 0;
+}
+
+.project-title h5 {
+	margin: 0 0 0.2rem;
+	padding: 0;
+
+	font-size: 0.7rem;
+	line-height: 1.1;
+}
+
+.project-title h2 {
+	margin: 0;
+	padding: 0;
+
+	font-size: 1.75rem;
+	line-height: 1;
+}
+
+.project-title h4 {
+	margin: 0.3rem 0 0;
+	padding: 0;
+
+	font-size: 0.7rem;
+	line-height: 1.2;
+}
+
+.project-details {
+	flex-shrink: 0;
+
+	margin: 0;
+	padding: 0 0 0 1rem;
+
+	font-size: 0.65rem;
+	line-height: 1.25;
+}
+
+.project-details p {
+	margin: 0 0 0.2rem;
+	padding: 0;
+}
+
+.project-details p:last-child {
+	margin-bottom: 0;
+}
+
 .scroll-container {
 	width: 100%;
 	overflow: hidden;
