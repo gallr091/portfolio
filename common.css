@@ -176,8 +176,8 @@ a {
 
 	.dropdown-menu li {
 		/* padding: 0.5rem; */
-		padding-right: 0.5rem;
-		padding-left: 0.5rem;
+		padding-right: 1rem;
+		padding-left: 1rem;
 		line-height: 5vh;
 	}
 
