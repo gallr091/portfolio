@@ -224,24 +224,25 @@ align-items: center;
 	font-size: 1.5rem;
 }
 
-.table{
+.table {
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	width: 80%;
 	align-items: center;
-	justify-content: space-evenly; 
-	margin-top: 3rem;
-	gap: 2rem;
+	justify-content: space-evenly;
+
+	margin-top: 1.5rem;
+	gap: 1.5rem;
 }
 
-.grid{
+.grid {
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
 	width: 80%;
 	align-items: center;
-	justify-content: space-evenly; 
-	margin-top: 3rem;
-	gap: 2rem;
+	justify-content: space-evenly;
+	margin-top: 1.5rem;
+	gap: 1.5rem;
 }
 
 .app-gif {
@@ -332,6 +333,33 @@ align-items: center;
 	animation: marquee 50s linear infinite;
 	width: max-content;
   }
+
+  .pic picture {
+	display: block;
+}
+
+.pic img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.table,
+.grid {
+	margin-top: 2rem;
+	gap: 1rem;
+}
+
+.pic picture {
+	display: block;
+}
+
+.pic img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
 
 /* ========================================
    MOBILE MENU — HIDDEN ON DESKTOP
@@ -541,10 +569,15 @@ align-items: center;
 
 		margin: 0.5rem 1rem 0;
 
-		gap: 0.5rem;
+		gap: 1rem;
 
 		align-items: start;
 	}
+
+	.table, .grid {
+	margin-top: 1rem;
+	gap: 1rem;
+}
 
 
 	/* --------------------

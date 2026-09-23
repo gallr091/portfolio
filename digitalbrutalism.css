@@ -643,6 +643,61 @@ align-items: center;
 		margin: 0 auto;
 	}
 
+	/* ========================================
+	  PIC ORDER
+	======================================== */
+
+	.side-caption {
+		width: auto;
+		max-width: none;
+
+		margin: 4rem 1rem 0;
+
+		display: flex;
+		flex-direction: column;
+
+		gap: 1.5rem;
+
+		align-items: flex-start;
+	}
+
+	/* ALWAYS put title + description first */
+	.side-caption .description {
+		width: 100%;
+		order: 1;
+	}
+
+	/* ALWAYS put image second */
+	.side-caption .project-item {
+		width: 100%;
+		margin: 0;
+		order: 2;
+	}
+
+	.description h2 {
+		margin: 0 0 0.75rem;
+
+		font-size: 1.5rem;
+		line-height: 1.1;
+	}
+
+	.side-caption p {
+		margin: 0;
+
+		font-size: 0.8rem;
+		line-height: 1.5;
+	}
+
+	.project-item img {
+		display: block;
+
+		width: 100%;
+		max-width: none;
+		height: auto;
+
+		border-radius: 10px;
+	}
+
 
 	/* ========================================
 	   GIF MARQUEE
