@@ -1,15 +1,24 @@
+/* ========================================
+   COOKIE RUN
+======================================== */
 
-html{
+html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
-body{
+body {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+
+
+/* ========================================
+   DESKTOP NAV
+======================================== */
 
 nav {
 	position: fixed;
@@ -23,81 +32,112 @@ nav {
 }
 
 
+/* ========================================
+   BACK TO TOP
+======================================== */
+
 #top {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: var(--color-lightgreen);
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    border: 1.5px solid #000;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	background-color: var(--color-lightgreen);
+	padding: 10px 15px;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	border: 1.5px solid #000;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
 	z-index: 1000;
+	pointer-events: none;
 }
 
-#top:hover{
+#top:hover {
 	cursor: pointer;
 	background: black;
 }
 
-#top:hover a{
+#top:hover a {
 	color: var(--color-lightgreen);
 }
 
 body.scrolled #top {
-    opacity: 1;
-    pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 
-body.scrolled .casestudy-menu {
-    opacity: 1;
-    pointer-events: auto;
-}
 
-header{
+/* ========================================
+   HEADER
+======================================== */
+
+header {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	/* margin-top: 3rem; */
-	max-width:101vw;
+	max-width: 101vw;
 	margin-left: -1rem;
 }
 
-picture{
+picture {
 	width: 100%;
-	/* margin-left: -1rem; */
 	margin-top: -1rem;
 }
 
-header img{
-	/* border-radius: 50px; */
+header img {
 	width: 101%;
 	margin-top: 0.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/* height: 100vh; */
+	display: block;
 }
 
-main{
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
 	height: auto;
-	flex-direction:column;
+	flex-direction: column;
 }
 
 
+/* ========================================
+   INTRO / TITLE
+======================================== */
 
-.project-details{
+.title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 90vw;
+}
+
+h1 {
+	font-family: var(--title-font);
+	font-size: 3rem;
+	width: 70%;
+	padding: 2rem;
+}
+
+h4 {
+	font-weight: 400;
+	width: 70%;
+	margin-left: 2rem;
+	font-size: 1rem;
+	padding-right: 1rem;
+}
+
+
+/* ========================================
+   PROJECT DETAILS
+======================================== */
+
+.project-details {
 	margin-top: 3rem;
 	width: 70vw;
-	/* border: var(--border-style);
-	border-radius: 50px; */
-	/* margin-top: -1rem; */
 }
 
-.project-info{
+.project-info {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
@@ -106,286 +146,576 @@ main{
 	padding-bottom: 1rem;
 }
 
-h2 {
-	font-family: var(--title-font);
-	font-size: 2rem;
-
-}
-
-.project-info p{
-	line-height: 0.5;
-}
-
-.project-info li{
+.project-info li {
 	line-height: 0.8;
 }
 
-
-.pdf {
-	display: flex;
-	margin-right: 1rem;
-	border:	1.5px solid #000;
-	text-align: center;
-	align-items: center;
-	/* line-height: 5vh; */
-	border-radius: 50px;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	background-color: var(--color-lightgreen);
-	font-size: 1.5rem;
-	padding: 1rem;
-}
-
-.pdf:hover{
-	background-color: black;
-	color: var(--color-lightgreen);
-	cursor: pointer;
-}
-
-.pdf:hover a{
-	color: var(--color-lightgreen);
-	cursor: pointer;
-}
-
-.title{
-	/* margin-top: 3rem; */
-	display: flex;
-	flex-direction: row;
-	/* justify-content: space-between; */
-	align-items: center;
-	/* border: var(--border-style);
-	border-radius: 50px; */
-	/* width: 90vw; */
-	width: 90vw;
-}
-
-h1{
+.project-info h2 {
 	font-family: var(--title-font);
-	font-size: 3rem;
-	/* padding-left: 2rem; */
-	/* background: black; */
-	width: 70%;
-	padding: 2rem;
-	/* color: var(--color-lightgreen); */
-	/* text-align: center; */
+	font-size: 2rem;
+}
+
+.project-info p {
+	line-height: 0.5;
 }
 
 
-h4{
-	font-weight: 400;
-	width: 70%;
-	margin-left: 2rem;
-	font-size: 1rem;
-	padding-right: 1rem;
-
-}
-
-
-
-
-.pic img{
-	border-radius: 20px;
-	width: 100%;
-}
-
-.features{
-margin-bottom: 7rem;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-
-.app-preview {
-    display: flex;
-    flex-direction: column;
-	width: 70vw;
-	justify-content: space-between; 
-	/* border: var(--border-style);
-    border-radius: 50px; */
-	margin-top: 5rem;
-	border: var(--border-style);
-    border-radius: 50px; 
-	/* align-items: center; */
-	justify-items: center;
-	/* margin-bottom: 5rem; */
-}
-
-
-.section-title{
-	border-bottom: var(--border-style);
-	text-align: center;
-
-}
-
-.section-title h3{
-	font-family: var(--title-font);
-	/* margin-left: 3rem; */
-	font-size: 1.5rem;
-}
-
-/* 
-.table{
-	display: flex;
-    flex-direction: column;
-	width: 80%;
-	align-items: center;
-	justify-content: space-evenly; 
-	margin-top: 3rem;
-	gap: 2rem;
-}
-
-.grid{
-	display: flex;
-    flex-direction: row;
-	width: 80%;
-	align-items: center;
-	justify-content: space-evenly; 
-	margin-top: 3rem;
-	gap: 2rem;
-} */
-
+/* ========================================
+   GALLERY
+======================================== */
 
 .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 0 3rem;
 	padding-top: 5rem;
 	padding-bottom: 5rem;
 }
 
-.gallery-columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    width: 100%;
-    align-items: start;
+.gallery img {
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
-.gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
+
+/* two-column rows */
+
+.gallery-columns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	width: 100%;
+	align-items: start;
 }
+
+
+/* stacked collage */
 
 .split-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    align-items: start;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	align-items: start;
 }
 
 .gallery-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .split-gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
-/* Instagram row */
+
+/* Instagram pair */
+
 #insta {
-    width: 100%;
+	width: 100%;
 }
 
 #insta img {
-    width: 100%;
-    height: auto;
-    object-fit: initial;
+	width: 100%;
+	height: auto;
+	object-fit: initial;
 }
 
-.app-gif {
-	flex: 0 0 auto; 
-    /* text-align: center; */
-    height: 520px;
-    width: 230px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-	justify-content: space-evenly; 
-	padding-bottom: 2rem;
 
+/* ========================================
+   MOBILE MENU — HIDDEN ON DESKTOP
+======================================== */
+
+#overlay-nav,
+#menu-toggle {
+	display: none;
 }
 
-.app-gif h2{
-	font-size: 1.5rem;
-}
 
-.app-gif img {
-    /* max-width: 100%; */
-	max-width: 100%; 
-    max-height: 100%; 
-    object-fit: cover;
-	justify-items: center;
+/* ========================================
+   MOBILE
+======================================== */
 
-}
+@media (max-width: 600px) {
 
-.app-gif picture{
-	width: 90%;
-}
+	/* --------------------
+	   PAGE
+	-------------------- */
 
-.caption{
-	width: 70vw;
+	html {
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		width: 100%;
+		display: block;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+
+	/* --------------------
+	   DESKTOP NAV OFF
+	-------------------- */
+
+	body > nav {
+		display: none;
+	}
+
+
+	/* --------------------
+	   HEADER
+	-------------------- */
+
+	header {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	header picture {
+		display: block;
+		width: 100%;
+	}
+
+	header img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+
+	/* --------------------
+	   MAIN
+	-------------------- */
+
+	main {
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	/* --------------------
+	   TITLE / DESCRIPTION
+	-------------------- */
+
+	.title {
+	width: auto;
+	margin: 2rem 1.5rem 0;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-items: center;
 }
 
-.caption img{
-	max-width: 100%;
-	margin-top: 3rem;
+.title h1 {
+	width: 100%;
+
+	margin: 0 0 1.5rem;
+	padding: 0;
+
+	font-size: 2rem;
+	line-height: 1.05;
+	text-align: center;
 }
 
-.caption p{
-	font-size: 1rem;
+	.title h4 {
+		width: 100%;
+
+		margin: 0;
+		padding: 0;
+
+		font-size: 0.8rem;
+		line-height: 1.4;
+	}
+
+
+	/* --------------------
+	   PROJECT INFO
+	-------------------- */
+
+	.project-details {
+		width: auto;
+		max-width: none;
+
+		margin: 2.5rem 1.5rem 0;
+	}
+
+	.project-info {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+
+		gap: 1rem;
+
+		margin: 0;
+		padding: 0;
+	}
+
+	.project-info li {
+		min-width: 0;
+		line-height: 1;
+	}
+
+	.project-info h2 {
+		margin: 0 0 0.75rem;
+
+		font-size: 1rem;
+		line-height: 1;
+	}
+
+	.project-info p {
+		margin: 0.3rem 0;
+
+		font-size: 0.65rem;
+		line-height: 1.3;
+	}
+
+
+	/* ========================================
+	   GALLERY
+	======================================== */
+
+	.gallery {
+		width: auto;
+
+		margin: 0 1rem;
+
+		padding-top: 3rem;
+		padding-bottom: 5rem;
+
+		gap: 0.5rem;
+	}
+
+	.gallery img {
+		display: block;
+
+		width: 100%;
+		height: auto;
+	}
+
+
+	/* --------------------
+	   TWO-COLUMN ROWS
+	-------------------- */
+
+	.gallery-columns {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: 0.5rem;
+		align-items: start;
+	}
+
+
+	/* --------------------
+	   STACKED COLLAGE
+	-------------------- */
+
+	.split-gallery {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: 0.5rem;
+		align-items: start;
+	}
+
+	.gallery-stack {
+		display: flex;
+		flex-direction: column;
+
+		gap: 0.5rem;
+	}
+
+
+	/* --------------------
+	   INSTAGRAM ROW
+	-------------------- */
+
+	#insta {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: 0.5rem;
+	}
+
+	#insta img {
+		width: 100%;
+		height: auto;
+
+		object-fit: initial;
+	}
+
+
+	/* --------------------
+	   BACK TO TOP
+	-------------------- */
+
+	#top {
+		position: fixed;
+
+		bottom: 5px;
+		left: 5px;
+
+		padding: 7px 10px;
+
+		opacity: 1;
+		pointer-events: auto;
+
+		font-size: 0.5rem;
+		font-weight: 700;
+
+		z-index: 1000;
+	}
+
+
+	/* ========================================
+	   MOBILE NAV — MATCH CARE CIRCLE
+	======================================== */
+
+	#menu-toggle {
+		position: fixed;
+
+		bottom: 20px;
+		right: 20px;
+
+		width: 60px;
+		height: 60px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: black;
+
+		border: 1.5px solid black;
+		border-radius: 50%;
+
+		cursor: pointer;
+
+		z-index: 9999;
+	}
+
+
+	/* --------------------
+	   SMALL FLOATING RICE BOWL
+	-------------------- */
+
+	#menu-toggle #icon {
+		transform: scale(0.8);
+		padding-top: 0.5rem;
+	}
+
+
+	/* ========================================
+	   FULLSCREEN MOBILE MENU
+	======================================== */
+
+	#overlay-nav {
+		position: fixed;
+
+		top: 0;
+		left: 0;
+
+		width: 100vw;
+		height: 100vh;
+
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+
+		padding-top: 3rem;
+
+		background: var(--color-lightgreen);
+
+		overflow-x: hidden;
+		overflow-y: hidden;
+
+		z-index: 9998;
+	}
+
+	#overlay-nav.show {
+		display: flex;
+	}
+
+
+	/* --------------------
+	   LARGE RICE BOWL
+	-------------------- */
+
+	.overlay-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.overlay-icon #icon {
+		transform: none;
+	}
+
+
+	/* --------------------
+	   RICE GALLARDO
+	-------------------- */
+
+	#mobile-name {
+	font-family: var(--title-font);
+	font-size: 2.5rem;
+
+	margin-top: 0;
+	margin-bottom: 0;
+
 	text-align: center;
 }
 
 
-.gif-marquee {
-	display: flex;
-	/* overflow: hidden; */
-	white-space: nowrap;
-	width: 100vw;
-	position: relative;
-	/* margin-top: 3rem; */
-	z-index: -10;
-	margin-top: 10rem;
-	margin-bottom: 10rem;
-  }
-  
-  .gif-marquee .marquee-content {
-	display: flex;
-	gap: 1rem; /* Adjust spacing between images */
-	animation: marquee 20s linear infinite;
-  }
-  
-  .gif-marquee .marquee-content img {
-	width: 200px; /* Adjust size */
-	height: auto;
-  }
-  
-  @keyframes marquee {
-	from {
-	  transform: translateX(0);
+	/* --------------------
+	   MOBILE NAV
+	-------------------- */
+
+	#mobile-nav {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		height: auto;
+
+		margin: 0;
+		padding: 0;
 	}
-	to {
-	  transform: translateX(-50%);
-	}
-  }
-  
-  /* Duplicate the content to create a seamless infinite effect */
-  .gif-marquee .marquee-content {
-	display: flex;
-	animation: marquee 50s linear infinite;
-	width: max-content;
-  }
 
 
+	/* --------------------
+	   CONTACT LINKS
+	-------------------- */
+
+	#contact-mobile {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		color: black;
+
+		gap: 2rem;
+
+		margin-top: 0.5rem;
+		padding: 0;
+
+		list-style: none;
+	}
+
+	#contact-mobile li {
+		margin: 0;
+		padding: 0;
+	}
+
+
+	/* --------------------
+	   BACK TO HOME
+	-------------------- */
+
+	#website-links {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+		width: 100%;
+
+		margin: 0;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		padding: 0;
+
+		gap: 0.5rem;
+
+		list-style: none;
+		text-align: center;
+	}
+
+	#website-links li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+	}
+
+	#website-links .link {
+		margin: 0;
+		text-align: center;
+	}
+
+	#website-links .link a {
+		text-align: center;
+	}
+
+
+	/* --------------------
+	   PROJECTS BLACK BAR
+	-------------------- */
+
+	#mobile-works {
+		width: 100vw;
+		box-sizing: border-box;
+
+		margin: 0;
+		margin-bottom: 0.5rem;
+
+		padding: 0.5rem;
+
+		background: black;
+		color: var(--color-lightgreen);
+
+		font-family: var(--title-font);
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+
+	/* --------------------
+	   PROJECT LIST
+	-------------------- */
+
+	#works {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		gap: 0.5rem;
+
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	#works li {
+		margin: 0;
+	}
+
+	#works li:hover {
+		color: black;
+		opacity: 0.5;
+	}
+
+}
