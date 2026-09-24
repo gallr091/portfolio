@@ -631,16 +631,31 @@ align-items: center;
 	   IMAGE STACK
 	-------------------- */
 
-	.image-stack {
-		grid-template-columns: 1fr;
+		.image-stack,
+	.single-image {
 		width: calc(100% - 2rem);
-		margin: 1rem auto 0;
-		gap: 1rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	.image-stack img {
+	.image-stack {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	.single-image {
+		margin-top: 1rem;
+	}
+
+	.image-stack img,
+	.single-image img {
+		display: block;
+		width: 100%;
+		height: auto;
 		border-radius: 10px;
 	}
+
 
 
 	/* --------------------
