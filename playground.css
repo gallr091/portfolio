@@ -1,11 +1,9 @@
-html{
+html {
 	scroll-behavior: smooth;
-	height: 100%;
 	overflow: hidden;
 }
 
 body {
-	height: 100vh;
 	overflow: hidden;
 }
 
@@ -313,11 +311,11 @@ picture{
 	in place.
 */
 
-main {
+/* main {
 	flex: 1;
 	min-height: 0;
 	overflow: hidden;
-}
+} */
 
 /* =========================================
    PLAYGROUND GALLERY
