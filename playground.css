@@ -1,0 +1,845 @@
+html{
+	scroll-behavior: smooth;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+}
+
+:target {
+	scroll-margin-top: 300px; 
+}
+
+
+/* =========================================
+   DESCRIPTION / FILTERS
+========================================= */
+#description {
+	font-size: 0.7rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	margin-top: 1.5rem;
+	gap: 0;
+}
+
+#description .filter {
+	appearance: none;
+	-webkit-appearance: none;
+
+	position: relative;
+
+	display: block;
+	width: auto;
+
+	margin: 0;
+	padding: 0;
+
+	border: 0;
+
+	background: transparent;
+	color: inherit;
+
+	font: inherit;
+	font-size: inherit;
+	line-height: 1.15rem;
+
+	text-align: center;
+
+	cursor: pointer;
+
+	transition:
+		transform 0.2s ease,
+		font-weight 0.2s ease;
+}
+
+
+/* CIRCLE */
+
+#description .filter::before {
+	content: "";
+
+	position: absolute;
+
+	right: calc(100% + 0.4rem);
+	top: 50%;
+
+	width: 6px;
+	height: 6px;
+
+	border-radius: 50%;
+	background: black;
+
+	opacity: 0;
+
+	transform:
+		translateY(-50%)
+		scale(0);
+
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+}
+
+/* HOVER */
+
+#description .filter:hover {
+	font-style: italic;
+
+	transform: translateX(2px);
+}
+
+#description .filter:hover::before {
+	opacity: 1;
+
+	transform:
+		translate(0, -50%)
+		scale(0.6);
+}
+
+
+/* ACTIVE */
+
+#description .filter.active {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+#description .filter.active::before {
+	opacity: 1;
+
+	transform:
+		translate(0, -50%)
+		scale(1);
+}
+
+/* =========================================
+   EXISTING STYLES
+========================================= */
+
+#about-me-content{
+	width: 73vw;
+	height: 550px;
+	border-radius: 50px;
+	margin: 1.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}	
+
+.gallery{
+	border: 1.5px solid black; 
+	height: 550px;
+	border-radius: 40px;
+	width: 450px;
+}
+
+.top {
+	height: 13%;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	border-bottom: 1.5px solid #000; 
+}
+
+.arrows {
+	display: flex;
+}
+
+h2{
+	font-family: var(--title-font);
+}
+
+.arrows h2 {
+	border: 1.5px solid #000;
+	border-radius: 50%;
+	width: 35px;
+	height: 35px; 
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+	cursor: pointer;
+	margin-left: 1rem;
+}
+
+.arrows h2:hover{
+	background-color: black;
+	color: var(--color-lightgreen);
+}
+
+.contact-mobile, 
+#contact-mobile{
+	display: none;
+}
+
+ul .link{
+	color: black;
+	background: var(--color-lightgreen);
+} 
+
+#playground-button{
+	background: black;
+}
+
+#playground-button a{
+	color: var(--color-lightgreen);
+}
+
+.dropdown-menu li:hover {
+	color: var(--color-lightgreen);
+}
+
+.dropdown-menu li a:hover {
+	color: var(--color-lightgreen);
+}
+
+#changingphrase {
+	transition: opacity 0.5s ease-in-out;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	stroke: 1px;
+}
+
+.fade-out {
+	opacity: 0;
+}
+
+.scroll-container {
+	width: 100%;
+	overflow-x: hidden;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+}
+  
+.scroll-grid-gallery {
+	display: flex;
+	animation: scroll 50s linear infinite;
+	width: max-content;
+	overflow: hidden; 
+	align-items: center;
+}
+
+.scroll-grid-gallery img {
+	width: 300px; 
+	height: 400px; 
+	object-fit: cover; 
+	display: block;
+	border-radius: 50px;
+	margin: 1rem;
+	border: 1.5px solid #000; 
+}
+
+picture{
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 1rem;
+}
+
+.about-me-text{
+	margin-left: 2rem;
+	height: 550px;
+	overflow-y: scroll;
+}
+
+.about-me-text h1{
+	font-family: var(--title-font);
+	font-size: 3rem;
+	margin-top: -0.5rem;
+	margin-bottom: 3rem;
+}
+
+.about-me-text p{
+	font-size: 0.9rem;
+}
+
+.bio {
+	margin-bottom: 2rem;
+	margin-top: -1rem;
+}
+
+.sparkle{
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.list{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-top: -1rem;
+}
+
+.list p{
+	margin-top: -1rem;
+}
+
+.list li{
+	line-height: 1.5;
+	margin-top: -1rem;
+}
+
+.article-link{
+	margin-bottom: 1.2rem;
+}
+
+.article-link a:hover{
+	font-style: italic;
+	text-decoration: underline;
+	color: black;
+}
+
+.bio, 
+.list{
+	margin-top: -2rem;
+}
+
+
+/* =========================================
+   PLAYGROUND PAGE
+========================================= */
+
+/*
+	main fills the remaining viewport.
+
+	The gallery itself becomes the scrolling
+	area while the rice/filter section stays
+	in place.
+*/
+
+main {
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+}
+
+/* =========================================
+   PLAYGROUND GALLERY
+========================================= */
+
+#playground-gallery {
+	position: fixed;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	width: 75vw;
+	height: 100vh;
+
+	margin: 0;
+	padding: 0 1rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	box-sizing: border-box;
+
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+#playground-gallery::-webkit-scrollbar {
+	display: none;
+}
+
+
+/* =========================================
+   GALLERY COLUMNS
+========================================= */
+
+.playground-columns {
+	display: grid;
+
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+
+	align-items: start;
+
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	gap: 1rem;
+}
+
+.playground-column {
+	min-width: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	margin: 0;
+	padding: 0;
+
+	gap: 1rem;
+}
+
+
+/* =========================================
+   PLAYGROUND ITEMS
+========================================= */
+
+.playground-item {
+	display: block;
+
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	flex-shrink: 0;
+
+	overflow: hidden;
+
+	box-sizing: border-box;
+}
+
+.playground-item img {
+	display: block;
+
+	width: 100%;
+	height: auto;
+
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+}
+
+.playground-item video {
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 1px;
+	margin: 0;
+	padding: 0;
+	object-fit: contain;
+	box-sizing: border-box;
+}
+
+.playground-item.hidden {
+	display: none;
+}
+
+.playground-item.two-images {
+	display: flex;
+	flex-direction: column;
+	overflow: visible;
+	gap: 0.5rem;
+}
+
+.playground-item.two-images img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 600px) {
+
+	/* =========================================
+	   PAGE SCROLL
+	========================================= */
+
+	html,
+	body {
+		overflow-x: hidden;
+		overflow-y: auto;
+		height: auto;
+		min-height: 100%;
+	}
+
+	body {
+		display: block;
+	}
+
+
+	/* =========================================
+	   NAV — SAME AS INDEX
+	========================================= */
+
+	nav {
+		flex-direction: column;
+		height: auto;
+		padding: 1rem;
+		margin-left: -0.2rem;
+		align-items: flex-start;
+	}
+
+	#website-links,
+	#contact {
+		flex-direction: row;
+		width: 100%;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	ul .link,
+	ul .contact {
+		margin-bottom: 0.5rem;
+		margin-right: 0;
+		width: 100%;
+		justify-content: center;
+	}
+
+
+	/* =========================================
+	   MAIN
+	========================================= */
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+
+		height: auto;
+		min-height: 0;
+
+		margin: 1rem;
+
+		overflow: visible;
+	}
+
+
+	/* =========================================
+	   RICE — SAME AS INDEX
+	========================================= */
+
+	#rice {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 2rem;
+	}
+
+
+	/* =========================================
+   FILTERS
+========================================= */
+
+#description {
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	align-items: center;
+	justify-content: center;
+
+	column-gap: 1.5rem;
+	row-gap: 0.6rem;
+
+	margin: 1rem 0 2rem;
+	padding: 0;
+}
+
+
+/* force a break before + after ALL */
+
+#description::before,
+#description .filter[data-filter="all"]::after {
+	content: "";
+	flex-basis: 100%;
+	width: 0;
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+#description .filter {
+	appearance: none;
+	-webkit-appearance: none;
+
+	position: relative;
+
+	flex: 0 0 auto;
+	width: max-content;
+
+	margin: 0;
+	padding: 0;
+
+	border: 0;
+	background: transparent;
+
+	color: inherit;
+	font: inherit;
+	font-size: inherit;
+	line-height: 1.2;
+
+	text-align: center;
+	cursor: pointer;
+}
+
+
+/* ALL */
+
+#description .filter[data-filter="all"] {
+	order: -1;
+}
+
+
+/* =========================================
+   CIRCLE
+========================================= */
+
+#description .filter::before {
+	content: "";
+
+	position: absolute;
+
+	right: calc(100% + 0.2rem);
+	top: 50%;
+
+	width: 6px;
+	height: 6px;
+
+	border-radius: 50%;
+	background: black;
+
+	opacity: 0;
+
+	transform: translateY(-50%) scale(0);
+
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+}
+
+
+#description .filter:hover {
+	font-style: italic;
+}
+
+
+#description .filter:hover::before {
+	opacity: 1;
+	transform: translateY(-50%) scale(0.6);
+}
+
+
+#description .filter.active {
+	font-weight: 700;
+}
+
+
+#description .filter.active::before {
+	opacity: 1;
+	transform: translateY(-50%) scale(1);
+}
+
+/* =========================================
+   CIRCLE TOGGLE
+========================================= */
+
+#description .filter::before {
+	content: "";
+
+	position: absolute;
+	right: calc(100% + 0.25rem);
+	top: 50%;
+
+	width: 6px;
+	height: 6px;
+
+	border-radius: 50%;
+	background: black;
+
+	opacity: 0;
+
+	transform: translateY(-50%) scale(0);
+
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+}
+
+
+#description .filter:hover {
+	font-style: italic;
+}
+
+
+#description .filter:hover::before {
+	opacity: 1;
+
+	transform:
+		translateY(-50%)
+		scale(0.6);
+}
+
+
+#description .filter.active {
+	font-weight: 700;
+}
+
+
+#description .filter.active::before {
+	opacity: 1;
+
+	transform:
+		translateY(-50%)
+		scale(1);
+}
+
+	/* =========================================
+	   GALLERY
+	   NO INTERNAL SCROLL
+	========================================= */
+
+	#playground-gallery {
+		position: static;
+
+		width: 100%;
+		height: auto;
+		max-height: none;
+
+		margin: 0;
+		padding: 0;
+
+		overflow: visible;
+	}
+
+
+	/* =========================================
+	   TWO-COLUMN GALLERY
+	========================================= */
+
+	.playground-columns {
+		display: grid;
+
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		width: 100%;
+		height: auto;
+
+		margin: 0;
+		padding: 0;
+
+		gap: 0.5rem;
+
+		overflow: visible;
+		align-items: start;
+	}
+
+
+	.playground-column {
+		min-width: 0;
+
+		display: flex;
+		flex-direction: column;
+
+		gap: 0.5rem;
+
+		margin: 0;
+		padding: 0;
+
+		overflow: visible;
+	}
+
+
+	/* =========================================
+	   ITEMS
+	========================================= */
+
+	.playground-item {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		margin: 0;
+		padding: 0;
+
+		border-radius: 0;
+
+		overflow: visible;
+		box-sizing: border-box;
+	}
+
+
+	.playground-item img,
+	.playground-item video {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		margin: 0;
+		padding: 0;
+
+		border-radius: 0;
+
+		box-sizing: border-box;
+	}
+
+
+	/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+	height: auto;
+
+	text-align: center;
+
+	padding-top: 3rem;
+	padding-bottom: 1rem;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-left: -0.1rem;
+
+	gap: 0.5rem;
+}
+
+
+#contact {
+	display: none;
+}
+
+
+#contact-mobile {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-evenly;
+
+	font-size: 0.8rem;
+}
+
+
+.contact-mobile {
+	display: block;
+}
+
+
+	/* =========================================
+	   HIDE DOODLE CONTROLS
+	========================================= */
+
+	.draggable,
+	#toggleDoodles,
+	#reset {
+		display: none;
+	}
+
+}
