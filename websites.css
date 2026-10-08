@@ -17,10 +17,10 @@ nav {
 	padding-left: 5rem;
 	padding-right: 6rem;
 }
-/* 
+
 .dropdown-menu {
 	top: 45px;
-} */
+}
 
 
 #top {
@@ -62,7 +62,7 @@ header{
 	align-items: center;
 	flex-direction: column;
 	/* margin-top: 3rem; */
-	max-width:100vw;
+	max-width:101vw;
 	margin-left: -1rem;
 }
 
@@ -119,74 +119,6 @@ h2 {
 .project-info li{
 	line-height: 0.8;
 }
-
-.table{
-	display: flex;
-    flex-direction: row;
-	width: 100%;
-	align-items: center;
-	justify-content: space-evenly; 
-}
-
-.side-caption {
-	max-width: 70%;
-	/* margin: 1rem; */
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 5rem; 
-    /* width: 100%; */
-	margin-top: 5rem;
-	/* margin-bottom: 3rem; */
-}
-
-.side-caption .project-item {
-    width: 100%; 
-    display: flex;
-    justify-content: center;
-}
-
-.project-item {
-    width: auto; /* Allow it to size naturally */
-    display: flex;
-    justify-content: center;
-}
-
-.project-item img {
-    /* width: 100%;  */
-    max-width: 500px; /* Increase to a comfortable size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 20px;
-}
-
-.description{
-	width: 100%;
-}
-
-
-.side-caption p {
-    /* max-width: 40%;  */
-    font-size: 1rem; /* Adjust font size if needed */
-    line-height: 1.5; /* Improve readability */
-}
-
-#vertical-pic{
-	margin-top: -3rem;
-}
-
-#smaller{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 70%;
-}
-
-#smaller img{
-	height: 90%;
-	align-items: center;
-}
-
-
 
 
 .pdf {
@@ -292,9 +224,10 @@ align-items: center;
 	font-size: 1.5rem;
 }
 
+
 .table{
 	display: flex;
-    flex-direction: row;
+    flex-direction: column;
 	width: 80%;
 	align-items: center;
 	justify-content: space-evenly; 
@@ -360,9 +293,8 @@ align-items: center;
 	position: relative;
 	/* margin-top: 3rem; */
 	z-index: -10;
-	/* margin-top: 10rem; */
-	margin-bottom: 8rem;
-	margin-top: -1rem;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
   }
   
   .gif-marquee .marquee-content {
@@ -372,8 +304,8 @@ align-items: center;
   }
   
   .gif-marquee .marquee-content img {
-	/* width: 200px;  */
-	height: 350px;
+	width: 200px; /* Adjust size */
+	height: auto;
   }
   
   @keyframes marquee {
@@ -386,18 +318,18 @@ align-items: center;
   }
   
   /* Duplicate the content to create a seamless infinite effect */
-  .gif-marquee .marquee-content {
+ .gif-marquee .marquee-content {
 	display: flex;
-	animation: marquee 60s linear infinite;
+	animation: marquee 50s linear infinite;
 	width: max-content;
-  }
+}
 
-  /* ========================================
-   MOBILE ELEMENTS — HIDDEN ON DESKTOP
+/* ========================================
+   MOBILE MENU — HIDDEN ON DESKTOP
 ======================================== */
 
-#menu-toggle,
-#overlay-nav {
+#overlay-nav,
+#menu-toggle {
 	display: none;
 }
 
@@ -421,6 +353,7 @@ align-items: center;
 		margin: 0;
 		width: 100%;
 		display: block;
+
 		overflow-x: hidden;
 		overflow-y: auto;
 	}
@@ -465,6 +398,7 @@ align-items: center;
 	main {
 		width: 100%;
 		height: auto;
+
 		margin: 0;
 		padding: 0;
 	}
@@ -475,12 +409,12 @@ align-items: center;
 	-------------------- */
 
 	.title {
-		width: auto;
-		margin: 2rem 1.5rem 0;
+	width: auto;
+	margin: 2rem 1.5rem 0;
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	}
 
 	.title h1 {
@@ -496,6 +430,7 @@ align-items: center;
 
 	.title h4 {
 		width: 100%;
+
 		margin: 0;
 		padding: 0;
 
@@ -505,7 +440,7 @@ align-items: center;
 
 
 	/* --------------------
-	   VISIT WEBSITE
+	   VISIT GENERATOR
 	-------------------- */
 
 	.pdf {
@@ -515,6 +450,7 @@ align-items: center;
 		padding: 0.75rem 1rem;
 
 		font-size: 0.8rem;
+
 		border-radius: 50px;
 	}
 
@@ -526,12 +462,14 @@ align-items: center;
 	.project-details {
 		width: auto;
 		max-width: none;
+
 		margin: 2.5rem 1.5rem 0;
 	}
 
 	.project-info {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+
 		gap: 1.5rem 1rem;
 
 		margin: 0;
@@ -559,140 +497,36 @@ align-items: center;
 
 
 	/* ========================================
-	   PROJECT SECTIONS
+	   IMAGE PAIRS
 	======================================== */
 
-	.side-caption {
+	.table {
 		width: auto;
-		max-width: none;
-
-		margin: 4rem 1rem 0;
 
 		display: flex;
 		flex-direction: column;
 
-		gap: 1.5rem;
-		align-items: flex-start;
+		margin: 3rem 1rem 0;
+
+		gap: 0.5rem;
 	}
 
-	.description {
+	.pic {
 		width: 100%;
 	}
 
-	.description h2 {
-		margin: 0 0 0.75rem;
-
-		font-size: 1.5rem;
-		line-height: 1.1;
-	}
-
-	.side-caption p {
-		margin: 0;
-
-		font-size: 0.8rem;
-		line-height: 1.5;
-	}
-
-
-	/* --------------------
-	   PROJECT GIFS
-	-------------------- */
-
-	.side-caption .project-item,
-	.project-item {
+	.pic picture {
 		display: block;
 
 		width: 100%;
+
 		margin: 0;
 	}
 
-	.project-item img {
+	.pic img {
 		display: block;
 
 		width: 100%;
-		max-width: none;
-		height: auto;
-
-		border-radius: 10px;
-	}
-
-
-	/* --------------------
-	   RESPONSIVE DESIGN GIF
-	-------------------- */
-
-	#vertical-pic {
-		margin-top: 4rem;
-	}
-
-	#smaller {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		width: 100%;
-		height: auto;
-	}
-
-	#smaller img {
-		width: auto;
-		max-width: 100%;
-		height: auto;
-		max-height: 70vh;
-
-		margin: 0 auto;
-	}
-
-	/* ========================================
-	  PIC ORDER
-	======================================== */
-
-	.side-caption {
-		width: auto;
-		max-width: none;
-
-		margin: 4rem 1rem 0;
-
-		display: flex;
-		flex-direction: column;
-
-		gap: 1.5rem;
-
-		align-items: flex-start;
-	}
-
-	/* ALWAYS put title + description first */
-	.side-caption .description {
-		width: 100%;
-		order: 1;
-	}
-
-	/* ALWAYS put image second */
-	.side-caption .project-item {
-		width: 100%;
-		margin: 0;
-		order: 2;
-	}
-
-	.description h2 {
-		margin: 0 0 0.75rem;
-
-		font-size: 1.5rem;
-		line-height: 1.1;
-	}
-
-	.side-caption p {
-		margin: 0;
-
-		font-size: 0.8rem;
-		line-height: 1.5;
-	}
-
-	.project-item img {
-		display: block;
-
-		width: 100%;
-		max-width: none;
 		height: auto;
 
 		border-radius: 10px;
@@ -710,6 +544,7 @@ align-items: center;
 
 		margin-top: 4rem;
 		margin-bottom: 5rem;
+
 		padding-top: 0.5rem;
 
 		overflow-x: hidden;
@@ -723,21 +558,23 @@ align-items: center;
 		align-items: flex-start;
 
 		width: max-content;
+
 		gap: 0.5rem;
 
-		animation: marquee 60s linear infinite;
+		animation: marquee 50s linear infinite;
 	}
 
 	.gif-marquee picture {
 		display: block;
+
 		margin: 0;
 	}
 
 	.gif-marquee .marquee-content img {
 		display: block;
 
-		width: auto;
-		height: 220px;
+		width: 140px;
+		height: auto;
 
 		margin: 0;
 	}
@@ -749,6 +586,7 @@ align-items: center;
 
 	#top {
 		position: fixed;
+
 		bottom: 5px;
 		left: 5px;
 
@@ -765,11 +603,12 @@ align-items: center;
 
 
 	/* ========================================
-	   MOBILE NAV — CARE CIRCLE
+	   MOBILE NAV — MATCH CARE CIRCLE
 	======================================== */
 
 	#menu-toggle {
 		position: fixed;
+
 		bottom: 20px;
 		right: 20px;
 
@@ -781,12 +620,19 @@ align-items: center;
 		justify-content: center;
 
 		background: black;
+
 		border: 1.5px solid black;
 		border-radius: 50%;
 
 		cursor: pointer;
+
 		z-index: 9999;
 	}
+
+
+	/* --------------------
+	   SMALL FLOATING RICE BOWL
+	-------------------- */
 
 	#menu-toggle #icon {
 		transform: scale(0.8);
@@ -794,19 +640,18 @@ align-items: center;
 	}
 
 
-	/* --------------------
-	   FULLSCREEN OVERLAY
-	-------------------- */
+	/* ========================================
+	   FULLSCREEN MOBILE MENU
+	======================================== */
 
 	#overlay-nav {
 		position: fixed;
+
 		top: 0;
 		left: 0;
 
 		width: 100vw;
 		height: 100vh;
-
-		background: var(--color-lightgreen);
 
 		display: none;
 		flex-direction: column;
@@ -815,10 +660,12 @@ align-items: center;
 
 		padding-top: 3rem;
 
-		z-index: 9998;
+		background: var(--color-lightgreen);
 
 		overflow-x: hidden;
 		overflow-y: hidden;
+
+		z-index: 9998;
 	}
 
 	#overlay-nav.show {
@@ -846,9 +693,13 @@ align-items: center;
 	-------------------- */
 
 	#mobile-name {
+		font-family: var(--title-font);
 		font-size: 2.5rem;
+
 		margin-top: 0;
 		margin-bottom: 0;
+
+		text-align: center;
 	}
 
 
@@ -857,11 +708,11 @@ align-items: center;
 	-------------------- */
 
 	#mobile-nav {
+		position: relative;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		position: relative;
 
 		height: auto;
 
@@ -907,16 +758,15 @@ align-items: center;
 
 		width: 100%;
 
-		list-style: none;
-
-		padding: 0;
-
 		margin: 0;
 		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
 
+		padding: 0;
+
 		gap: 0.5rem;
 
+		list-style: none;
 		text-align: center;
 	}
 
@@ -930,6 +780,7 @@ align-items: center;
 
 	#website-links .link {
 		margin: 0;
+
 		text-align: center;
 	}
 
@@ -944,6 +795,7 @@ align-items: center;
 
 	#mobile-works {
 		width: 100vw;
+
 		box-sizing: border-box;
 
 		margin: 0;
@@ -956,6 +808,7 @@ align-items: center;
 
 		font-family: var(--title-font);
 		font-size: 1.5rem;
+
 		text-align: center;
 	}
 

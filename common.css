@@ -1,326 +1,633 @@
+
+/* ========================================
+   1. FONTS & VARIABLES
+======================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Xanh+Mono:ital@0;1&display=swap');
 
 :root {
+    /* Colors */
+    --color-background: #F6F0E5;
+    --color-green: #047C6E;
+    --color-purple: #6495ED;
+    --color-lightgreen: #F0FFF0;
 
-	/* Colors */
-	--color-background: #F6F0E5; 
-	/* --color-background:  #CFFFF6; */ 
-	--color-green:  #047C6E;
-	--color-purple: #6495ED;
-	--color-lightgreen: #F0FFF0;
+    /* Fonts */
+    --body-font: "Roboto Mono", monospace;
+    --body-font-weight: 500;
+    --body-font-style: normal;
 
-	/* Fonts */
-	/* --body-font: "Quicksand", sans-serif; */
-	--body-font: "Roboto Mono", monospace;
-	--body-font-weight: 500;
-	--body-font-style: normal;
-	--title-font:  "Xanh Mono", monospace;
-	--title-font-weight: 500;
-	--title-font-style: normal;
+    --title-font: "Xanh Mono", monospace;
+    --title-font-weight: 500;
+    --title-font-style: normal;
 
-  	/* Other */
-	 --border-style: 1.5px solid #000;
-
-  /* --border-style: 2px dashed black;
-  --transition: 0.3s ease-in-out;   */
+    /* Other */
+    --border-style: 1.5px solid #000;
+    --spring-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.xanh-mono-regular {
-	font-family: "Xanh Mono", monospace;
-	font-weight: 400;
-	font-style: normal;
-  }
-  
-  .xanh-mono-regular-italic {
-	font-family: "Xanh Mono", monospace;
-	font-weight: 400;
-	font-style: italic;
-  }
-  
 
+/* ========================================
+   2. FONT STYLES
+======================================== */
+
+.xanh-mono-regular {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.xanh-mono-regular-italic {
+    font-family: "Xanh Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+/* ========================================
+   3. GLOBAL STYLES
+======================================== */
 
 body {
-	background-color: var(--color-lightgreen);
-	display: flex;
-	flex-direction: column;
-	overflow-y: hidden;
-	font-size: 1rem;
-	font-family: var(--body-font);
-	font-optical-sizing: auto;
-	font-style: normal;
+    background-color: var(--color-lightgreen);
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+
+    font-size: 1rem;
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 ::selection {
-	background: black;
-	color: var(--color-lightgreen);
-  }
+    background: black;
+    color: var(--color-lightgreen);
+}
 
-  a:-webkit-any-link {
+/* Links */
+
+a,
+a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+    color: black;
 }
 
-.contact{
-	color: black;
-	text-decoration: none;
+.contact {
+    color: black;
+    text-decoration: none;
 }
 
-.contact a:hover{
-	font-style: italic;
-	text-decoration: underline;
-	color: black;
+.contact a:hover {
+    font-style: italic;
+    text-decoration: underline;
+    color: black;
 }
 
-/* .link:hover{
-	color: var(--color-lightgreen);
-} */
 
-	nav {
-		padding-top: 1rem;
-		height: 5vh;
-		margin-left: 1rem;
-		/* margin-top: 0.5rem; */
-		font-size: 0.8rem;
-		max-width: 100%;
-		display: flex;
-		justify-content: space-between;
-	}
+/* ========================================
+   4. NAVIGATION
+======================================== */
 
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		text-align: center;
-	} 
+/* Nav Container */
 
-	ul .link {
-		display: flex;
-		margin-right: 1rem;
-		border:	1.5px solid #000;
-		text-align: center;
-		align-items: center;
-		/* line-height: 5vh; */
-		height: 35px;
-		border-radius: 50px;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
-		background-color: var(--color-lightgreen);
-	}
+nav {
+    position: relative;
+    z-index: 1000;
 
-	ul .link:hover{
-		background-color: black;
-		color: var(--color-lightgreen);
-		cursor: pointer;
-	}
+    padding-top: 1rem;
+    height: 5vh;
+    margin-left: 1rem;
 
-	ul .link:hover > a{
-		color: var(--color-lightgreen);
-		cursor: pointer;
-	}
+    font-size: 0.8rem;
+    max-width: 100%;
 
-	ul a:hover{
-		color: var(--color-lightgreen);
-	}
-
-	ul .contact{
-		margin-right: 1rem;
-	}
+    display: flex;
+    justify-content: space-between;
+}
 
 
-	.dropdown-menu {
-		list-style: none;
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		top: 55px;
-		z-index: 1000;
-		opacity: 0;
-		/* top: 100%;
-		left: 0; */
-		border: 1.5px solid #000;
-		border-radius: 30px;
-		padding: 0;
-		margin: 0;
-		width: max-content;
-		background: var(--color-lightgreen);
-		transition: opacity 0.2s ease-out, transform 0.3s ease-out;
-	}
 
-	.dropdown-menu.active {
-		opacity: 1;
-		transform: scaleY(1);
-		animation: bounceIn 0.3s ease-out;
-	}
+/* Nav List */
 
-	@keyframes bounceIn {
-		0% {
-			transform: scaleY(0.8);
-			opacity: 0;
-		}
-		50% {
-			transform: scaleY(1.1);
-			opacity: 1;
-		}
-		100% {
-			transform: scaleY(1);
-		}
-	}
-	
-	
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
-	.dropdown-menu li {
-		/* padding: 0.5rem; */
-		padding-right: 1rem;
-		padding-left: 1rem;
-		line-height: 5vh;
-	}
+    display: flex;
+    text-align: center;
+}
 
-	
-	.dropdown-menu li a {
-		text-decoration: none;
-		color: black;
-		/* display: block; */
-	}
-	
+/* Nav Pills */
+
+ul .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 0.5rem;
+    padding: 0 0.5rem;
+
+    height: 35px;
+    border: var(--border-style);
+    border-radius: 50px;
+
+    text-align: center;
+    background-color: var(--color-lightgreen);
+
+    transform: scale(1);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.4s var(--spring-easing);
+}
+
+/* Nav Links */
+
+ul .link a {
+    color: black;
+    transition: color 0.25s ease;
+}
+
+/* Nav Hover */
+
+ul .link:hover {
+    background-color: black;
+    color: var(--color-lightgreen);
+    cursor: pointer;
+
+    transform: scale(1.06);
+}
+
+ul .link:hover > a {
+    color: var(--color-lightgreen);
+}
+
+/* Nav Click */
+
+ul .link:active {
+    transform: scale(0.96);
+}
+
+/* Contact Nav Item */
+
+ul .contact {
+    margin-right: 1rem;
+}
+
+ul .link:has(.dropdown-toggle) {
+    position: relative;
+    z-index: 10;
+}
 
 
-	.dropdown-menu li:hover {
-		color: var(--color-lightgreen);
-		background-color: black;
-		cursor: pointer;
-	}
-	
+
+/* ========================================
+   WORK DROPDOWN ARROW
+======================================== */
+
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+
+    /* No margin or transform on the container */
+}
+
+.dropdown-arrow::after {
+    content: "";
+    display: block;
+
+    width: 3px;
+    height: 3px;
+
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+
+    transform: rotate(45deg);
+    transform-origin: center;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate in place when dropdown opens */
+.dropdown-toggle[aria-expanded="true"] .dropdown-arrow::after {
+    transform: rotate(225deg);
+}
 
 
-	.dropdown-menu li:hover a {
-		color: var(--color-lightgreen);
-	}
+/* ========================================
+   5. WORK DROPDOWN MENU
+======================================== */
 
-	.dropdown-menu li:first-child:hover {
-		border-top-left-radius: 20px;
-		border-top-right-radius: 20px;
-	}
-	
-	.dropdown-menu li:last-child:hover {
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
-	}
-	
-		
+/*
+   Dropdown is controlled by JavaScript.
 
+   Hidden: .dropdown-menu
+   Visible: .dropdown-menu.active
+
+   Hovering over Work does NOT open the menu.
+*/
+
+/* Dropdown Container */
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Position relative to Work button */
+    top: calc(100% - 2px);
+    left: 100%;
+    z-index: 9999;
+
+    width: max-content;
+    padding: 0;
+    margin: 0;
+
+    border: var(--border-style);
+    border-radius: 30px;
+    background: var(--color-lightgreen);
+
+    /* Hidden State */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, -20px) scale(0.94);
+    transform-origin: top center;
+
+   transition:
+    opacity 0.2s ease,
+    transform 0.25s ease-out,
+    visibility 0s linear 0.25s;
+}
+
+
+/* Dropdown Open - CLICK ONLY */
+
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate(-50%, 0) scale(1);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.25s ease-out,
+    visibility 0s;
+}
+
+/* Dropdown Items */
+
+.dropdown-menu li {
+    padding: 0 1rem;
+    line-height: 5vh;
+
+    transition: background-color 0.2s ease;
+}
+
+/* Dropdown Links */
+
+.dropdown-menu li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+
+    transition:
+        color 0.2s ease,
+        transform 0.3s var(--spring-easing);
+}
+
+/* Dropdown Item Hover */
+
+.dropdown-menu li:hover {
+    color: var(--color-lightgreen);
+    background-color: black;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover a {
+    color: var(--color-lightgreen);
+    transform: translateX(3px);
+}
+
+/* Rounded Dropdown Corners */
+
+.dropdown-menu li:first-child:hover {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.dropdown-menu li:last-child:hover {
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+}
+
+
+/* ========================================
+   6. MAIN LAYOUT & FOOTER
+======================================== */
 
 main {
-	height: 85vh;
-	display: flex;
-	align-items: center;
+    height: 85vh;
+    display: flex;
+    align-items: center;
 }
 
-footer{
-	height: 10vh;
-	margin-left: 1rem;
-	font-size: 0.6rem;
+footer {
+    height: 10vh;
+    margin-left: 1rem;
+    font-size: 0.6rem;
 }
 
 
-/* SVG */
+/* ========================================
+   7. RICE / PROFILE
+======================================== */
 
+/* Rice Container */
+
+#rice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1rem;
+    width: 20vw;
+}
+
+/* Rice Icon */
+
+#icon {
+    cursor: pointer;
+}
+
+/* Description */
+
+#description {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#description p:nth-child(2) {
+    padding-top: 3rem;
+    text-align: center;
+}
+
+#description p:nth-child(3) {
+    text-align: center;
+    margin-top: -3rem;
+}
+
+/* Description Controls */
+
+#toggleDoodles,
+#reset {
+    cursor: alias;
+}
+
+#toggleDoodles:hover,
+#reset:hover {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* Changing Text Animation */
+
+#changing-text {
+    transition: opacity 0.5s ease-in-out;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    stroke: 1px;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+
+/* ========================================
+   8. SVG STYLES
+======================================== */
 
 .cls-1 {
-	stroke-width: 2px;
+    stroke-width: 2px;
 }
 
-.cls-1, .cls-2, .cls-3 {
-	fill: var(--color-lightgreen);
-	stroke: #000;
+.cls-1,
+.cls-2,
+.cls-3 {
+    fill: var(--color-lightgreen);
+    stroke: #000;
 }
 
-.cls-1, .cls-3 {
-	stroke-miterlimit: 10;
+.cls-1,
+.cls-3 {
+    stroke-miterlimit: 10;
 }
 
 .cls-2 {
-	stroke-width: 5px;
+    stroke-width: 5px;
 }
 
 .cls-3 {
-	stroke-width: 6px;
+    stroke-width: 6px;
 }
 
 .cls-4 {
-	stroke-width: 0px;
+    stroke-width: 0px;
 }
 
-.cls-4:hover, .cls-2:hover {
-	transform-origin: center;
-  }
+/* SVG Hover */
 
-
-/* ME */
-#rice {
-	display: flex;
-	margin: 1rem;
-	width: 20vw;
-	flex-direction: column;
-	align-items: center;  
-	justify-content: center;
-}
-
-#icon{	
-	cursor: pointer;
-}
-
-#description {
-	font-size: 0.7rem;
-	display: flex;
-	flex-direction: column;
-}
-
-#description p:nth-child(2){
-	padding-top: 3rem;
-	text-align: center;
-}
-
-#description p:nth-child(3){
-	text-align: center;
-	margin-top: -3rem;
-}
-
-#toggleDoodles, #reset{
-	cursor: alias;
-}
-
-#toggleDoodles:hover, #reset:hover{
-	font-style: italic;
-	text-decoration: underline;
+.cls-4:hover,
+.cls-2:hover {
+    transform-origin: center;
 }
 
 
-#changing-text {
-	transition: opacity 0.5s ease-in-out;
-	font-optical-sizing: auto;
-	font-weight: 700;
-	stroke: 1px;
-}
-  .fade-out {
-	opacity: 0;
-  }
+/* ========================================
+   9. DRAGGABLE ICONS
+======================================== */
 
-
-/* random icons */
 .draggable {
     width: 80px;
     height: auto;
+
     cursor: grab;
-	z-index: 1000;
-	-webkit-filter: drop-shadow(5px 5px 5px 	#3b3b3b);
-	filter: drop-shadow(5px 5px 5px 	#3b3b3b);
-  }
+    z-index: 1000;
 
-  
+    -webkit-filter: drop-shadow(5px 5px 5px #3b3b3b);
+    filter: drop-shadow(5px 5px 5px #3b3b3b);
+}
 
+
+/* ========================================
+   10. ACCESSIBILITY
+======================================== */
+
+/* Keyboard Focus */
+
+ul .link:focus-within {
+    outline-offset: 3px;
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    ul .link,
+    ul .link a,
+    .dropdown-menu,
+    .dropdown-menu li,
+    .dropdown-menu li a {
+        transition: none;
+    }
+}
+
+/* ========================================
+   MOBILE DROPDOWN POSITIONING
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Keep Work as the positioning reference */
+    ul .link:has(.dropdown-toggle) {
+        position: relative;
+        z-index: 1001;
+    }
+
+    /* Mobile dropdown */
+    .dropdown-menu {
+        top: calc(100% - 2px);
+        left: 50%;
+
+        margin: 0;
+        z-index: 999;
+
+        transform: translate(-50%, -10px) scale(0.94);
+        transform-origin: top center;
+    }
+
+    /* Open state */
+    .dropdown-menu.active {
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+
+/* ========================================
+   FIX WORK DROPDOWN CLICKING
+======================================== */
+
+/* Prevent WORK button from scaling when hovered or clicked */
+ul .link.dropdown:hover,
+ul .link.dropdown:active,
+ul .link.dropdown:focus-within {
+    transform: none;
+}
+
+
+/* ========================================
+   DROPDOWN CLICK FIX
+======================================== */
+
+/* Keep WORK and its dropdown above page content */
+nav {
+    position: relative;
+    z-index: 10000;
+}
+
+ul .link.dropdown {
+    position: relative;
+    z-index: 10001;
+}
+
+/* Prevent the WORK pill from moving */
+ul .link.dropdown:hover,
+ul .link.dropdown:active {
+    transform: none;
+}
+
+/* Ensure dropdown is clickable */
+.dropdown-menu.active {
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 10002;
+}
+
+/* Ensure each link receives pointer events */
+.dropdown-menu li,
+.dropdown-menu li a {
+    pointer-events: auto;
+}
+
+.dropdown-menu li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ========================================
+   DROPDOWN CLICK FIX
+======================================== */
+
+/* Keep WORK and its dropdown above page content */
+nav {
+    position: relative;
+    z-index: 10000;
+}
+
+ul .link.dropdown {
+    position: relative;
+    z-index: 10001;
+}
+
+/* Prevent the WORK pill from moving */
+ul .link.dropdown:hover,
+ul .link.dropdown:active {
+    transform: none;
+}
+
+/* Ensure dropdown is clickable */
+.dropdown-menu.active {
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 10002;
+}
+
+/* Ensure each link receives pointer events */
+.dropdown-menu li,
+.dropdown-menu li a {
+    pointer-events: auto;
+}
+
+.dropdown-menu li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+}

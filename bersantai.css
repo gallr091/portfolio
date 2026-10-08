@@ -18,9 +18,9 @@ nav {
 	padding-right: 6rem;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
 	top: 45px;
-}
+} */
 
 nav {
 	position: fixed;
@@ -29,9 +29,9 @@ nav {
 	padding-right: 6rem;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
 	top: 45px;
-}
+} */
 
 #top {
     position: fixed;

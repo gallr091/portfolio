@@ -312,31 +312,51 @@ highlightMenuItem(); // run on load
 
 
 //FUNCTION: DROPDOWN
+
+/* ========================================
+   WORK DROPDOWN
+======================================== */
+
 const dropdownToggle = document.querySelector(".dropdown-toggle");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+const dropdownMenu = document.querySelector(".dropdown-menu");
 
-    dropdownToggle.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevents closing when clicking inside
+if (dropdownToggle && dropdownMenu) {
 
-        // Toggle opacity
-        if (dropdownMenu.style.opacity === "1") {
-            dropdownMenu.style.opacity = "0";
-            dropdownMenu.style.pointerEvents = "none"; // Disable interactions when hidden
-        } else {
-            dropdownMenu.style.opacity = "1";
-            dropdownMenu.style.pointerEvents = "auto"; // Enable interactions
+    dropdownToggle.setAttribute("aria-expanded", "false");
+
+    function closeDropdown() {
+        dropdownMenu.classList.remove("active");
+        dropdownToggle.setAttribute("aria-expanded", "false");
+    }
+
+    // Only clicking WORK toggles the dropdown
+    dropdownToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = dropdownMenu.classList.toggle("active");
+        dropdownToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Clicking a project link should navigate normally
+    dropdownMenu.addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
+
+    // Close only when clicking outside the WORK dropdown
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".link.dropdown")) {
+            closeDropdown();
         }
     });
 
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.opacity = "0";
-            dropdownMenu.style.pointerEvents = "none";
+    // Close on Escape
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeDropdown();
         }
     });
-
-
+}
 
 
 // FUNCTION: SVG SHAKE
@@ -376,3 +396,16 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 
+/* TEMPORARY DROPDOWN CLICK DEBUG */
+
+document.querySelectorAll(".dropdown-menu a").forEach(link => {
+    link.addEventListener("click", (event) => {
+        console.log("DROPDOWN LINK CLICKED:", link.href);
+        console.log("Default prevented:", event.defaultPrevented);
+    });
+});
+
+document.addEventListener("click", (event) => {
+    console.log("CLICK TARGET:", event.target);
+    console.log("CLICK PREVENTED:", event.defaultPrevented);
+});
